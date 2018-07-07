@@ -1,0 +1,256 @@
+.title-news {
+	color: black;
+	font-weight: 400;
+	font-size: 18px;
+}
+
+.title-news:hover {
+	color: #50af55;
+}
+
+.card-headline:hover {
+	-webkit-transition: 0.2s ease-out;
+	-moz-transition: 0.2s ease-out;
+	-o-transition: 0.2s ease-out;
+	box-shadow: 0 0 20px 0 rgba(0,0,0,0.10);
+}
+
+.card-headline:hover a{
+	color: #50af55;
+	-webkit-transition: 0.2s ease-out;
+	-moz-transition: 0.2s ease-out;
+	-o-transition: 0.2s ease-out;
+	transition: 0.2s ease-out;
+}
+
+.card-headline:hover span{
+	color: #50af55;
+	-webkit-transition: 0.2s ease-out;
+	-moz-transition: 0.2s ease-out;
+	-o-transition: 0.2s ease-out;
+	transition: 0.2s ease-out;
+}
+
+.card-footer a{
+	color: #50af55;
+	font-weight: 400;
+	font-size: 13px;
+}
+
+.left-menu{
+	color: black;
+	font-size: 13px;
+	font-weight: 300;
+	margin: 3px 0px;
+}
+
+.left-menu a{
+	color: black;
+	font-size: 13px;
+	font-weight: 300;
+}
+
+.logo-left-menu {
+	vertical-align: bottom;
+	margin-right: 20px;
+	color: #999;
+	font-size: 20px;
+}
+
+.left-menu.active {
+	background-color: #eaeaea;
+}
+
+.left-menu.active a{
+	font-weight: 700;
+	color: black;
+}
+
+.left-menu.active i{
+	color: black;
+}
+
+.left-menu:hover a{
+	font-weight: 700;
+	color: black;
+	background-color: #eaeaea;
+}
+
+.left-menu:hover i{
+	color: black;
+}
+
+.navbar{
+	box-shadow: 0 0 10px 0 rgba(0,0,0,0.10);
+	background-color: #fff !important;
+}
+
+.navbar-brand{
+	font-family: 'Montserrat', sans-serif;
+	color: #666;
+	font-weight: 300;
+	font-size: 18px;
+	margin-right: 30px;
+}
+
+.header-link:hover{
+	font: white;
+}
+
+.header-search {
+	border-bottom: 1px solid #999;
+	border-radius: 0px;"
+}
+
+.index-search {
+	border: none;
+	width: 500px !important;
+	font-size: 15px;
+	font-weight: 300;
+}
+
+.index-search:focus{
+	box-shadow: none;
+}
+
+.repo-search {
+	border: none;
+	border-bottom: 1px solid #999;
+	border-radius: 0px;
+	font-size: 15px;
+	font-weight: 300;
+}
+
+.repo-search:focus{
+	box-shadow: none;
+	border-bottom: 1px solid #50af55;
+}
+
+.card-entity:hover {
+	-webkit-transition: 0.2s ease-out;
+	-moz-transition: 0.2s ease-out;
+	-o-transition: 0.2s ease-out;
+	box-shadow: 0 0 20px 0 rgba(0,0,0,0.10);
+}
+
+.card-entity:hover button{
+	color: #50af55;
+	cursor: pointer;
+	-webkit-transition: 0.2s ease-out;
+	-moz-transition: 0.2s ease-out;
+	-o-transition: 0.2s ease-out;
+	transition: 0.2s ease-out;
+}
+
+.entity-populer {
+	margin: 5px 1px;
+	border-radius: 5px;
+	font-weight: 300;
+	font-size: 13px;
+	padding: 3px 9px;
+}
+
+.entity-populer:hover {
+	border-color: #50af55;
+	cursor: pointer;
+}
+
+.geo {
+	font-weight: 300;
+	font-size: 13px;
+}
+
+.geo-news {
+	font-weight: 400;
+	font-size: 13px;
+	color: black;
+	display: block;
+}
+
+.geo-tgl {
+	font-weight: 500;
+	font-size: 15px;
+	color: black;
+	display: block;
+}
+
+.card-weather:hover,.card-right:hover {
+	-webkit-transition: 0.2s ease-out;
+	-moz-transition: 0.2s ease-out;
+	-o-transition: 0.2s ease-out;
+	box-shadow: 0 0 20px 0 rgba(0,0,0,0.10);
+}
+
+.card-right:hover a{
+	color: #50af55;
+	cursor: pointer;
+	-webkit-transition: 0.2s ease-out;
+	-moz-transition: 0.2s ease-out;
+	-o-transition: 0.2s ease-out;
+	transition: 0.2s ease-out;
+}
+
+mark { 
+   	background-color: #fff;
+   	color: black;
+   	border: 1px solid #50af55;
+   	border-radius: 0.25em;
+   	padding: 0.3em;
+}
+
+mark:hover { 
+   	background-color: #50af5533;
+   	color: black;
+   	border: 1px solid #50af55;
+   	border-radius: 0.25em;
+   	padding: 0.3em;
+}
+
+mark:after {
+	content: '\2605';
+   	background-color: #50af55;
+   	padding: 1px 4px;
+	color: white;
+	border-radius: 0.25em;
+   	margin-left: 0.5em;
+}
+
+.btn-back-result {
+	border: none;
+	background-color: #f7f7f7;
+	cursor: pointer;
+	float: right;
+	margin-right: 20px;
+}
+
+.btn-back-result:hover {
+	color: #50af55;
+}
+
+.card-all-entity:hover {
+	-webkit-transition: 0.2s ease-out;
+	-moz-transition: 0.2s ease-out;
+	-o-transition: 0.2s ease-out;
+	box-shadow: 0 0 20px 0 rgba(0,0,0,0.10);
+}
+
+.news-lainya{
+	display: block;
+	color: black;
+	font-size: 14px;
+}
+
+.news-lainya:hover{
+	color: #50af55;
+}
+
+.card-news-lainya:hover {
+	-webkit-transition: 0.2s ease-out;
+	-moz-transition: 0.2s ease-out;
+	-o-transition: 0.2s ease-out;
+	box-shadow: 0 0 20px 0 rgba(0,0,0,0.10);
+}
+
+.table-hover tbody tr:hover {
+    background-color: #50af5588;
+}

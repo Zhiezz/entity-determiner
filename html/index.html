@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+	<meta charset = "utf-8">
+
+	<title>Entity Determiner</title>
+
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" >
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,600|Open+Sans:300,400,600" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- <link rel="icon" href="my_logo.png"> -->
+	<link href="my_style.css" rel="stylesheet">
+</head>
+<body style="background-color: #f7f7f7" onload="startTime()">
+	<!-- HEADER -->
+	<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" style="">
+		<a class="navbar-brand" href="index.html">
+		    <!-- <img src="logo_tab.png" width="30" height="30" class="d-inline-block align-top" style="margin: 0px 15px"> -->
+		    Entity Determiner
+		</a>
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+	  	</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<form class="form-inline ml-auto">
+				<div class="header-search">
+		     		<input class="form-control mr-sm-2 index-search" type="search" placeholder="Search" aria-label="Search">
+		     		<i class="material-icons" style="vertical-align: middle; margin-right: 7px; color: #999">search</i>
+	     		</div>
+	    	</form>
+			<ul class="navbar-nav ml-auto">
+	    		<li class="nav-item header-link">
+		        	<a class="nav-link" href="#">Headline</a>
+		    	</li>
+		    	<li class="nav-item header-link">
+		        	<a class="nav-link" href="#">Repository</a>
+		      	</li>
+		      	<li class="nav-item header-link dropdown">
+		        	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Apps
+		        	</a>
+			        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" style="font-size: 13px; font-weight: 300">
+			        	<a class="dropdown-item" href="#">Tagged Corpus</a>
+			        	<div class="dropdown-divider"></div>
+			        	<a class="dropdown-item" href="about.html">About</a>
+			        	<a class="dropdown-item" href="help.html">Help</a>
+			        </div>
+		      	</li>
+	    	</ul>
+	  	</div>
+	</nav>
+
+	<!-- BODY -->
+	<div class="container-fluid" style="margin-top: 70px">
+		<div class="row">
+			<!-- LEFT -->
+			<div class="col-md-2">
+				<div style="top: 90px; position: sticky;">
+					<h6 style="margin: 18px 20px 5px 20px; font-weight: 500; font-size: 13px">KATEGORI</h6>
+
+					<ul class="nav flex-column">
+						<li class="nav-item left-menu active">
+							<a class="nav-link" href="index.html">
+								<i class="material-icons logo-left-menu">home</i>
+								Terbaru
+							</a>
+						</li>
+						<li class="nav-item left-menu">
+							<a class="nav-link" href="#">
+								<i class="material-icons logo-left-menu">work</i>
+								Bisnis
+							</a>
+						</li>
+						<li class="nav-item left-menu">
+							<a class="nav-link" href="#">
+								<i class="material-icons logo-left-menu">devices</i>
+								Teknologi
+							</a>
+						</li>
+						<li class="nav-item left-menu">
+							<a class="nav-link" href="#">
+								<i class="material-icons logo-left-menu">movie_creation</i>
+								Hiburan
+							</a>
+						</li>
+						<li class="nav-item left-menu">
+							<a class="nav-link" href="#">
+								<i class="material-icons logo-left-menu">directions_bike</i>
+								Olahraga
+							</a>
+						</li>
+						<li class="nav-item left-menu">
+							<a class="nav-link" href="#">
+								<i class="material-icons logo-left-menu">home</i>
+								Science
+							</a>
+						</li>
+						<li class="nav-item left-menu">
+							<a class="nav-link" href="#">
+								<i class="material-icons logo-left-menu">add_box</i>
+								Kesehatan
+							</a>
+						</li>
+					</ul>
+
+					<hr style="margin: 5px 15px">
+
+					<h6 style="margin: 18px 20px 5px 20px; font-weight: 500; font-size: 13px">APPLICATION</h6>
+
+					<ul class="nav flex-column">
+						<li class="nav-item left-menu">
+							<a class="nav-link" href="repository.html">
+								<i class="material-icons logo-left-menu">storage</i>
+								Repository
+							</a>
+						</li>
+						<li class="nav-item left-menu">
+							<a class="nav-link" href="tag.html">
+								<i class="material-icons logo-left-menu">storage</i>
+								Tagged Corpus
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- MID -->
+			<div class="col-md-7">
+				<h5 style="margin: 10px 20px">Headline</h5>
+
+				<div class="card card-headline" style="margin-bottom: 10px">
+					<div class="card-body">
+						<a class="title-news" href="result.html" style="display: block;">Selain Novanto, KPK Cari Pihak Lain yang terlibat e-KTP</a>
+						<span style="font-size: 11px; color: black"><font style="font-weight: 700">Okezone.com</font> - Rabu, 25/05/1995</span>
+						<hr style="margin: 7px 0px">
+						<p style="font-size: 13px">Pengadilan Tindak Pidana Korupsi (Tipikor) telah memberikan vonis 15 tahun penjara terhadap mantan Ketua DPR Setya Novanto atas kasus dugaan korupsi proyek KTP elektronik (e-KTP).</p>
+						<a href="result.html" class="title-news" style="float:right; font-size: 11px; cursor: pointer;">Lihat Selengkapnya</a>
+					</div> 
+				</div>
+
+				<div class="card card-headline" style="margin-bottom: 10px">
+					<div class="card-body">
+						<a class="title-news" href="result.html" style="display: block;">Selain Novanto, KPK Cari Pihak Lain yang terlibat e-KTP</a>
+						<span style="font-size: 11px; color: black"><font style="font-weight: 700">Okezone.com</font> - Rabu, 25/05/1995</span>
+						<hr style="margin: 7px 0px">
+						<p style="font-size: 13px">Pengadilan Tindak Pidana Korupsi (Tipikor) telah memberikan vonis 15 tahun penjara terhadap mantan Ketua DPR Setya Novanto atas kasus dugaan korupsi proyek KTP elektronik (e-KTP).</p>
+						<a href="result.html" class="title-news" style="float:right; font-size: 11px; cursor: pointer;">Lihat Selengkapnya</a>
+					</div> 
+				</div>
+
+				<div class="card card-headline" style="margin-bottom: 10px">
+					<div class="card-body">
+						<a class="title-news" href="result.html" style="display: block;">Selain Novanto, KPK Cari Pihak Lain yang terlibat e-KTP</a>
+						<span style="font-size: 11px; color: black"><font style="font-weight: 700">Okezone.com</font> - Rabu, 25/05/1995</span>
+						<hr style="margin: 7px 0px">
+						<p style="font-size: 13px">Pengadilan Tindak Pidana Korupsi (Tipikor) telah memberikan vonis 15 tahun penjara terhadap mantan Ketua DPR Setya Novanto atas kasus dugaan korupsi proyek KTP elektronik (e-KTP).</p>
+						<a href="result.html" class="title-news" style="float:right; font-size: 11px; cursor: pointer;">Lihat Selengkapnya</a>
+					</div> 
+				</div>
+
+				<h5 style="margin: 10px 20px">Headline</h5>
+
+				<div class="card card-headline" style="margin-bottom: 10px">
+					<div class="card-body">
+						<a class="title-news" href="result.html" style="display: block;">Selain Novanto, KPK Cari Pihak Lain yang terlibat e-KTP</a>
+						<span style="font-size: 11px; color: black"><font style="font-weight: 700">Okezone.com</font> - Rabu, 25/05/1995</span>
+						<hr style="margin: 7px 0px">
+						<p style="font-size: 13px">Pengadilan Tindak Pidana Korupsi (Tipikor) telah memberikan vonis 15 tahun penjara terhadap mantan Ketua DPR Setya Novanto atas kasus dugaan korupsi proyek KTP elektronik (e-KTP).</p>
+						<a href="result.html" class="title-news" style="float:right; font-size: 11px; cursor: pointer;">Lihat Selengkapnya</a>
+					</div> 
+				</div>
+
+				<div class="card card-headline" style="margin-bottom: 10px">
+					<div class="card-body">
+						<a class="title-news" href="result.html" style="display: block;">Selain Novanto, KPK Cari Pihak Lain yang terlibat e-KTP</a>
+						<span style="font-size: 11px; color: black"><font style="font-weight: 700">Okezone.com</font> - Rabu, 25/05/1995</span>
+						<hr style="margin: 7px 0px">
+						<p style="font-size: 13px">Pengadilan Tindak Pidana Korupsi (Tipikor) telah memberikan vonis 15 tahun penjara terhadap mantan Ketua DPR Setya Novanto atas kasus dugaan korupsi proyek KTP elektronik (e-KTP).</p>
+						<a href="result.html" class="title-news" style="float:right; font-size: 11px; cursor: pointer;">Lihat Selengkapnya</a>
+					</div> 
+				</div>
+
+				<div class="card card-headline" style="margin-bottom: 10px">
+					<div class="card-body">
+						<a class="title-news" href="result.html" style="display: block;">Selain Novanto, KPK Cari Pihak Lain yang terlibat e-KTP</a>
+						<span style="font-size: 11px; color: black"><font style="font-weight: 700">Okezone.com</font> - Rabu, 25/05/1995</span>
+						<hr style="margin: 7px 0px">
+						<p style="font-size: 13px">Pengadilan Tindak Pidana Korupsi (Tipikor) telah memberikan vonis 15 tahun penjara terhadap mantan Ketua DPR Setya Novanto atas kasus dugaan korupsi proyek KTP elektronik (e-KTP).</p>
+						<a href="result.html" class="title-news" style="float:right; font-size: 11px; cursor: pointer;">Lihat Selengkapnya</a>
+					</div> 
+				</div>
+
+				<h5 style="margin: 10px 20px">Headline</h5>
+
+				<div class="card card-headline" style="margin-bottom: 10px">
+					<div class="card-body">
+						<a class="title-news" href="result.html" style="display: block;">Selain Novanto, KPK Cari Pihak Lain yang terlibat e-KTP</a>
+						<span style="font-size: 11px; color: black"><font style="font-weight: 700">Okezone.com</font> - Rabu, 25/05/1995</span>
+						<hr style="margin: 7px 0px">
+						<p style="font-size: 13px">Pengadilan Tindak Pidana Korupsi (Tipikor) telah memberikan vonis 15 tahun penjara terhadap mantan Ketua DPR Setya Novanto atas kasus dugaan korupsi proyek KTP elektronik (e-KTP).</p>
+						<a href="result.html" class="title-news" style="float:right; font-size: 11px; cursor: pointer;">Lihat Selengkapnya</a>
+					</div> 
+				</div>
+
+				<div class="card card-headline" style="margin-bottom: 10px">
+					<div class="card-body">
+						<a class="title-news" href="result.html" style="display: block;">Selain Novanto, KPK Cari Pihak Lain yang terlibat e-KTP</a>
+						<span style="font-size: 11px; color: black"><font style="font-weight: 700">Okezone.com</font> - Rabu, 25/05/1995</span>
+						<hr style="margin: 7px 0px">
+						<p style="font-size: 13px">Pengadilan Tindak Pidana Korupsi (Tipikor) telah memberikan vonis 15 tahun penjara terhadap mantan Ketua DPR Setya Novanto atas kasus dugaan korupsi proyek KTP elektronik (e-KTP).</p>
+						<a href="result.html" class="title-news" style="float:right; font-size: 11px; cursor: pointer;">Lihat Selengkapnya</a>
+					</div> 
+				</div>
+
+				<div class="card card-headline" style="margin-bottom: 10px">
+					<div class="card-body">
+						<a class="title-news" href="result.html" style="display: block;">Selain Novanto, KPK Cari Pihak Lain yang terlibat e-KTP</a>
+						<span style="font-size: 11px; color: black"><font style="font-weight: 700">Okezone.com</font> - Rabu, 25/05/1995</span>
+						<hr style="margin: 7px 0px">
+						<p style="font-size: 13px">Pengadilan Tindak Pidana Korupsi (Tipikor) telah memberikan vonis 15 tahun penjara terhadap mantan Ketua DPR Setya Novanto atas kasus dugaan korupsi proyek KTP elektronik (e-KTP).</p>
+						<a href="result.html" class="title-news" style="float:right; font-size: 11px; cursor: pointer;">Lihat Selengkapnya</a>
+					</div> 
+				</div>
+			</div>
+
+			<!-- RIGHT -->
+			<div class="col-md-3">
+				<!-- <div style="top: 93px; position: sticky;"> -->
+				<div>
+					<h6 style="margin: 23px 20px 5px 20px; font-weight: 500; font-size: 13px">YOGYAKARTA</h6>
+					<div class="card card-weather" style="margin-bottom: 10px">
+						<div class="card-body">
+							<div class="geo-tgl" id="date" style="text-align: center;"></div>
+						</div>
+					</div>
+
+					<h6 style="margin: 23px 20px 5px 20px; font-weight: 500; font-size: 13px">BERITA LOKAL</h6>
+					<div class="card card-right">
+						<div class="card-body">
+							<a class="geo-news" href="#">Selain Novanto, KPK Cari Pihak Lain yang terlibat e-KTP</a>
+							<span style="font-size: 11px; display: block; color: #999; margin-bottom: 10px">
+								<font style="font-weight: 500;">Okezone.com</font> - Rabu, 25/05/1995
+							</span>
+
+							<a class="geo-news" href="#">Selain Novanto, KPK Cari Pihak Lain yang terlibat e-KTP</a>
+							<span style="font-size: 11px; display: block; color: #999; margin-bottom: 10px">
+								<font style="font-weight: 500;">Okezone.com</font> - Rabu, 25/05/1995
+							</span>
+
+							<a class="geo-news" href="#">Selain Novanto, KPK Cari Pihak Lain yang terlibat e-KTP</a>
+							<span style="font-size: 11px; display: block; color: #999; margin-bottom: 10px">
+								<font style="font-weight: 500;">Okezone.com</font> - Rabu, 25/05/1995
+							</span>
+
+							<a class="geo-news" href="#">Selain Novanto, KPK Cari Pihak Lain yang terlibat e-KTP</a>
+							<span style="font-size: 11px; display: block; color: #999; margin-bottom: 10px">
+								<font style="font-weight: 500;">Okezone.com</font> - Rabu, 25/05/1995
+							</span>
+
+							<a class="geo-news" href="#" style="text-decoration: none">Berita Terkait Lainya
+								<i class="material-icons" style="font-size: 13px; vertical-align: middle;">arrow_forward</i>
+							</a>
+						</div>
+					</div>
+
+					<h6 style="margin: 20px 20px 5px 20px; font-weight: 500; font-size: 13px">ENTITAS POPULER</h6>
+					<div class="card card-entity">
+						<div class="card-body">
+							<button class="entity-populer">Indonesia</button>
+							<button class="entity-populer">Jakarta</button>
+							<button class="entity-populer">Jokowi</button>
+							<button class="entity-populer">Setya Novanto</button>
+							<button class="entity-populer">KPK</button>
+							<button class="entity-populer">Indonesia</button>
+							<button class="entity-populer">Jakarta</button>
+							<button class="entity-populer">Jokowi</button>
+							<button class="entity-populer">Setya Novanto</button>
+							<button class="entity-populer">KPK</button>
+							<button class="entity-populer">Indonesia</button>
+							<button class="entity-populer">Jakarta</button>
+							<button class="entity-populer">Jokowi</button>
+							<button class="entity-populer">Setya Novanto</button>
+							<button class="entity-populer">KPK</button>
+							<button class="entity-populer">Indonesia</button>
+							<button class="entity-populer">Jakarta</button>
+							<button class="entity-populer">Jokowi</button>
+							<button class="entity-populer">Setya Novanto</button>
+							<button class="entity-populer">KPK</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row" style="margin: 20px auto">
+			<div class="col"  style="text-align: center; margin: 0px auto">
+				<div class="card card-footer" style="background:none; border: none;">
+					<span>
+						<a href="index.html">Headline</a> -
+						<a href="berita.html">Repository</a> -
+						<a href="tag.html">Tagged Word</a> -
+						<a href="about.html">About</a> -
+						<a href="help.html">Help</a>
+					</span>
+					<span style="color:#777; font-weight: 300">
+						<font style="font-weight: 400">Entity Determiner</font>
+						by Husain Abdul Aziz</span>
+					<span style="color:#777; font-weight: 300; font-size: 15px">Universitas AMIKOM Yogyakarta</span>
+					<span>
+						<a href="mailto:zhiezzpct@gmail.com">
+						<i class="material-icons" style="vertical-align: middle;">mail</i>
+						Contact Me</a>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="my_js.js"></script>
+
+	<!-- Bootstrap core JavaScript -->
+    <script src="https://getbootstrap.com/docs/4.0/examples/dashboard/../../../../assets/js/vendor/popper.min.js"></script>
+    <script src="https://getbootstrap.com/docs/4.0/examples/dashboard/../../../../dist/js/bootstrap.min.js"></script>
+
+
+	<script>
+		function startTime() {
+		    var today = new Date();
+		    var d = today.getDate();
+		    var m = today.getMonth();
+		    var y = today.getFullYear();
+		    var h = today.getHours();
+		    var m = today.getMinutes();
+		    var s = today.getSeconds();
+		    m = checkTime(m);
+		    s = checkTime(s);
+		    document.getElementById('date').innerHTML =  d + "-" + m + "-" + y + " | " + h + ":" + m + ":" + s + " WIB";
+		    var t = setTimeout(startTime, 500);
+		}
+
+		function checkTime(i) {
+		    if (i < 10) {
+		    	i = "0" + i
+		    };  // add zero in front of numbers < 10
+		    return i;
+		}
+	</script>
+</body>
+</html>
