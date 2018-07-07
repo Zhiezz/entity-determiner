@@ -8,14 +8,14 @@
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" >
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,600|Open+Sans:300,400,600" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<!-- <link rel="icon" href="my_logo.png"> -->
-	<link href="my_style.css" rel="stylesheet">
+	<link rel="icon" href="logo_tab.png">
+	<link href="../css/my_style.css" rel="stylesheet">
 </head>
 <body style="background-color: #f7f7f7" onload="startTime()">
 	<!-- HEADER -->
 	<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" style="">
 		<a class="navbar-brand" href="index.html">
-		    <!-- <img src="logo_tab.png" width="30" height="30" class="d-inline-block align-top" style="margin: 0px 15px"> -->
+		    <img src="logo_tab.png" width="30" height="30" class="d-inline-block align-top" style="margin: 0px 15px">
 		    Entity Determiner
 		</a>
 
@@ -127,7 +127,7 @@
 
 			<!-- MID -->
 			<div class="col-md-7">
-				<h5 style="margin: 10px 20px">Headline</h5>
+				<h5 style="margin: 10px 20px">Terbaru</h5>
 
 				<div class="card card-headline" style="margin-bottom: 10px">
 					<div class="card-body">
@@ -159,7 +159,7 @@
 					</div> 
 				</div>
 
-				<h5 style="margin: 10px 20px">Headline</h5>
+				<h5 style="margin: 10px 20px">Bisnis</h5>
 
 				<div class="card card-headline" style="margin-bottom: 10px">
 					<div class="card-body">
@@ -191,7 +191,39 @@
 					</div> 
 				</div>
 
-				<h5 style="margin: 10px 20px">Headline</h5>
+				<h5 style="margin: 10px 20px">Teknologi</h5>
+
+				<div class="card card-headline" style="margin-bottom: 10px">
+					<div class="card-body">
+						<a class="title-news" href="result.html" style="display: block;">Selain Novanto, KPK Cari Pihak Lain yang terlibat e-KTP</a>
+						<span style="font-size: 11px; color: black"><font style="font-weight: 700">Okezone.com</font> - Rabu, 25/05/1995</span>
+						<hr style="margin: 7px 0px">
+						<p style="font-size: 13px">Pengadilan Tindak Pidana Korupsi (Tipikor) telah memberikan vonis 15 tahun penjara terhadap mantan Ketua DPR Setya Novanto atas kasus dugaan korupsi proyek KTP elektronik (e-KTP).</p>
+						<a href="result.html" class="title-news" style="float:right; font-size: 11px; cursor: pointer;">Lihat Selengkapnya</a>
+					</div> 
+				</div>
+
+				<div class="card card-headline" style="margin-bottom: 10px">
+					<div class="card-body">
+						<a class="title-news" href="result.html" style="display: block;">Selain Novanto, KPK Cari Pihak Lain yang terlibat e-KTP</a>
+						<span style="font-size: 11px; color: black"><font style="font-weight: 700">Okezone.com</font> - Rabu, 25/05/1995</span>
+						<hr style="margin: 7px 0px">
+						<p style="font-size: 13px">Pengadilan Tindak Pidana Korupsi (Tipikor) telah memberikan vonis 15 tahun penjara terhadap mantan Ketua DPR Setya Novanto atas kasus dugaan korupsi proyek KTP elektronik (e-KTP).</p>
+						<a href="result.html" class="title-news" style="float:right; font-size: 11px; cursor: pointer;">Lihat Selengkapnya</a>
+					</div> 
+				</div>
+
+				<div class="card card-headline" style="margin-bottom: 10px">
+					<div class="card-body">
+						<a class="title-news" href="result.html" style="display: block;">Selain Novanto, KPK Cari Pihak Lain yang terlibat e-KTP</a>
+						<span style="font-size: 11px; color: black"><font style="font-weight: 700">Okezone.com</font> - Rabu, 25/05/1995</span>
+						<hr style="margin: 7px 0px">
+						<p style="font-size: 13px">Pengadilan Tindak Pidana Korupsi (Tipikor) telah memberikan vonis 15 tahun penjara terhadap mantan Ketua DPR Setya Novanto atas kasus dugaan korupsi proyek KTP elektronik (e-KTP).</p>
+						<a href="result.html" class="title-news" style="float:right; font-size: 11px; cursor: pointer;">Lihat Selengkapnya</a>
+					</div> 
+				</div>
+
+				<h5 style="margin: 10px 20px">Hiburan</h5>
 
 				<div class="card card-headline" style="margin-bottom: 10px">
 					<div class="card-body">
@@ -323,29 +355,5 @@
 	<!-- Bootstrap core JavaScript -->
     <script src="https://getbootstrap.com/docs/4.0/examples/dashboard/../../../../assets/js/vendor/popper.min.js"></script>
     <script src="https://getbootstrap.com/docs/4.0/examples/dashboard/../../../../dist/js/bootstrap.min.js"></script>
-
-
-	<script>
-		function startTime() {
-		    var today = new Date();
-		    var d = today.getDate();
-		    var m = today.getMonth();
-		    var y = today.getFullYear();
-		    var h = today.getHours();
-		    var m = today.getMinutes();
-		    var s = today.getSeconds();
-		    m = checkTime(m);
-		    s = checkTime(s);
-		    document.getElementById('date').innerHTML =  d + "-" + m + "-" + y + " | " + h + ":" + m + ":" + s + " WIB";
-		    var t = setTimeout(startTime, 500);
-		}
-
-		function checkTime(i) {
-		    if (i < 10) {
-		    	i = "0" + i
-		    };  // add zero in front of numbers < 10
-		    return i;
-		}
-	</script>
 </body>
 </html>
