@@ -247,6 +247,46 @@
 	background-color: #82589f38;
 }
 
+.ORG {
+	border: 1px solid #e67e22 !important;
+}
+
+.ORG:hover {
+	background-color: #e67d2256;
+}
+
+.PERSON {
+	border: 1px solid #2980b9 !important;
+}
+
+.PERSON:hover {
+	background-color: #297fb94f;
+}
+
+.EVENT {
+	border: 1px solid #27ae60 !important;
+}
+
+.EVENT:hover {
+	background-color: #27ae5f56;
+}
+
+.FACILITY {
+	border: 1px solid #2c3e50 !important;
+}
+
+.FACILITY:hover {
+	background-color: #16a08454;
+}
+
+.GPE {
+	border: 1px solid #c0392b !important;
+}
+
+.GPE:hover {
+	background-color: #c03a2b56;
+}
+
 .tag {
 	font-size: 0.6em;
 	font-weight: bold;
@@ -261,8 +301,24 @@
 	color: #82589f !important;
 }
 
+.ORG .tag{
+	color: #e67e22 !important;
+}
+
 .PERSON .tag{
 	color: #82589f !important;
+}
+
+.EVENT .tag{
+	color: #27ae60 !important;
+}
+
+.FACILITY .tag{
+	color: #2c3e50 !important;
+}
+
+.GPE .tag{
+	color: #c0392b !important;
 }
 
 .btn-back-result {
