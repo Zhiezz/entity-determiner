@@ -8,6 +8,10 @@
 	color: #50af55;
 }
 
+.card {
+	border-radius: 0.5rem;
+}
+
 .card-headline:hover {
 	-webkit-transition: 0.2s ease-out;
 	-moz-transition: 0.2s ease-out;
@@ -143,15 +147,18 @@
 
 .entity-populer {
 	margin: 5px 1px;
-	border-radius: 5px;
+	border-radius: 0;
 	font-weight: 300;
+	border-color: #fff;
 	font-size: 13px;
 	padding: 3px 9px;
+	border-bottom: 2px solid #ebebeb;
 }
 
 .entity-populer:hover {
 	color: #50af55;
-	border-color: #50af55;
+	border-radius: 0;
+	border-bottom: 2px solid #27ae60;
 }
 
 .geo {
@@ -256,7 +263,7 @@
 }
 
 .PERSON {
-	border: 1px solid #2980b9 !important;
+	border: 1px solid #4693c3 !important;
 }
 
 .PERSON:hover {
@@ -306,7 +313,7 @@
 }
 
 .PERSON .tag{
-	color: #82589f !important;
+	color: #4693c3 !important;
 }
 
 .EVENT .tag{
@@ -319,6 +326,25 @@
 
 .GPE .tag{
 	color: #c0392b !important;
+}
+
+.btn-load-more {
+	border-radius: 0.5rem;
+    display: block;
+    margin: 30px auto 0px;
+    color: #fff;
+    background-color: #4faf55;
+    border-color: #39893e;
+}
+
+.btn-load-more:hover {
+	color: #28a745;
+    background-color: #f7f7f7;
+    border-color: #4faf55;
+}
+
+.btn-load-more:focus {
+	box-shadow: none;
 }
 
 .btn-back-result {
