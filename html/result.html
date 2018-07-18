@@ -14,9 +14,9 @@
 <body style="background-color: #f7f7f7">
 	<!-- HEADER -->
 	<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" style="">
-		<a class="navbar-brand" href="index.html">
-		    <!-- <img src="logo_tab.png" width="30" height="30" class="d-inline-block align-top" style="margin: 0px 15px"> -->
-		    Entity Determiner
+		<i class="material-icons btn-switch-menu" style="margin-right: 20px; cursor: pointer;">dehaze</i>
+		<a class="navbar-brand" href="/">
+		    <font style="font-weight: 600; color: #50af55">Entity</font> Determiner
 		</a>
 
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,62 +54,67 @@
 	<!-- BODY -->
 	<div class="container-fluid" style="margin-top: 70px">
 		<div class="row">
-			<!-- LEFT -->
+			<!-- LEFT >
 			<div class="col-md-2">
 				<div style="top: 90px; position: sticky;">
-					<h6 style="margin: 18px 20px 5px 20px; font-weight: 500; font-size: 13px">KATEGORI</h6>
-
 					<ul class="nav flex-column">
-						<li class="nav-item left-menu active">
+						<li class="nav-item left-menu left-menu-terbaru active">
 							<a class="nav-link" href="/">
 								<i class="material-icons logo-left-menu">home</i>
 								Terbaru
 							</a>
 						</li>
-						<li class="nav-item left-menu">
-							<a class="nav-link" href="/">
+					</ul>
+					
+					<hr style="margin: 5px 15px">
+
+					<h6 style="margin: 18px 20px 5px 20px; font-weight: 500; font-size: 13px">KATEGORI</h6>
+
+					<ul class="nav flex-column">
+						<li class="nav-item left-menu left-menu-dunia">
+							<a class="nav-link" onclick="Category('dunia','public',0)">
 								<i class="material-icons logo-left-menu">public</i>
 								Dunia
 							</a>
 						</li>
-						<li class="nav-item left-menu">
-							<a class="nav-link" href="/">
+						<li class="nav-item left-menu left-menu-indonesia">
+							<a class="nav-link" onclick="Category('indonesia','room',0)">
 								<i class="material-icons logo-left-menu">room</i>
 								Indonesia
 							</a>
 						</li>
-						<li class="nav-item left-menu">
-							<a class="nav-link" href="/">
+						<li class="nav-item left-menu left-menu-bisnis">
+							<a class="nav-link" onclick="Category('bisnis','business',0)">
 								<i class="material-icons logo-left-menu">business</i>
 								Bisnis
 							</a>
 						</li>
-						<li class="nav-item left-menu">
-							<a class="nav-link" href="/">
+						<li class="nav-item left-menu left-menu-teknologi">
+							<a class="nav-link" onclick="Category('teknologi','memory',0)">
 								<i class="material-icons logo-left-menu">memory</i>
 								Teknologi
 							</a>
 						</li>
-						<li class="nav-item left-menu">
-							<a class="nav-link" href="/">
+						<li class="nav-item left-menu left-menu-hiburan">
+							<a class="nav-link" onclick="Category('hiburan','local_movies',0)">
 								<i class="material-icons logo-left-menu">local_movies</i>
 								Hiburan
 							</a>
 						</li>
-						<li class="nav-item left-menu">
-							<a class="nav-link" href="/">
+						<li class="nav-item left-menu left-menu-olahraga">
+							<a class="nav-link" onclick="Category('olahraga','directions_bike',0)">
 								<i class="material-icons logo-left-menu">directions_bike</i>
 								Olahraga
 							</a>
 						</li>
-						<li class="nav-item left-menu">
-							<a class="nav-link" href="/">
+						<li class="nav-item left-menu left-menu-science">
+							<a class="nav-link" onclick="Category('science','home',0)">
 								<i class="material-icons logo-left-menu">home</i>
 								Science
 							</a>
 						</li>
-						<li class="nav-item left-menu">
-							<a class="nav-link" href="/">
+						<li class="nav-item left-menu left-menu-kesehatan">
+							<a class="nav-link" onclick="Category('kesehatan','fitness_center',0)">
 								<i class="material-icons logo-left-menu">fitness_center</i>
 								Kesehatan
 							</a>
@@ -122,27 +127,24 @@
 
 					<ul class="nav flex-column">
 						<li class="nav-item left-menu">
-							<a class="nav-link" href="repository.html">
+							<a class="nav-link" href="/repository">
 								<i class="material-icons logo-left-menu">storage</i>
 								Repository
 							</a>
 						</li>
 						<li class="nav-item left-menu">
-							<a class="nav-link" href="tag.html">
+							<a class="nav-link" href="/tag">
 								<i class="material-icons logo-left-menu">storage</i>
 								Tagged Corpus
 							</a>
 						</li>
 					</ul>
 				</div>
-			</div>
-
+			</div-->
+			<div class="col-md-1"></div>
 			<!-- MID -->
 			<div class="col-md-7" style="margin-top: 7px">
-				<h5 style="margin: 10px; display: inline;">
-					Preview Berita
-				</h5>
-				<button class="btn-back-result" onclick="location.href = 'index.html';">
+				<button class="btn-back-result" onclick="location.href = '/';">
 					<i class="material-icons" style="font-size: 20px; vertical-align: middle;">arrow_back</i>
 					Kembali
 				</button>
@@ -151,6 +153,7 @@
 					<div class="card-body content">
 						<h5>Bertemu Ketum Golkar, Cak Imin Sepakati Dua Hal Ini</h5>
 						<span style="font-size: 13px; color: black">
+							<img src="https://www.google.com/s2/favicons?domain=www.liputan6.com" width="16" height="16" style="margin-right: 5px">
 							<font style="font-weight: 700">www.liputan6.com</font>
 							 - 2018-07-12 15:05:00
 						</span>
@@ -303,34 +306,10 @@
 							</table>
 						</div>
 					</div>
-
-					<h6 style="margin: 20px 20px 5px 20px; font-weight: 500; font-size: 13px">ENTITAS POPULER</h6>
-					<div class="card card-entity">
-						<div class="card-body">
-							<button class="entity-populer">Indonesia</button>
-							<button class="entity-populer">Jakarta</button>
-							<button class="entity-populer">Jokowi</button>
-							<button class="entity-populer">Setya Novanto</button>
-							<button class="entity-populer">KPK</button>
-							<button class="entity-populer">Indonesia</button>
-							<button class="entity-populer">Jakarta</button>
-							<button class="entity-populer">Jokowi</button>
-							<button class="entity-populer">Setya Novanto</button>
-							<button class="entity-populer">KPK</button>
-							<button class="entity-populer">Indonesia</button>
-							<button class="entity-populer">Jakarta</button>
-							<button class="entity-populer">Jokowi</button>
-							<button class="entity-populer">Setya Novanto</button>
-							<button class="entity-populer">KPK</button>
-							<button class="entity-populer">Indonesia</button>
-							<button class="entity-populer">Jakarta</button>
-							<button class="entity-populer">Jokowi</button>
-							<button class="entity-populer">Setya Novanto</button>
-							<button class="entity-populer">KPK</button>
-						</div>
-					</div>
 				</div>
 			</div>
+
+			<div class="col-md-1"></div>
 		</div>
 
 		<div class="row" style="margin: 20px auto">

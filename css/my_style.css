@@ -366,12 +366,16 @@
 	border: none;
 	background-color: #f7f7f7;
 	cursor: pointer;
-	float: right;
 	margin-right: 20px;
 }
 
 .btn-back-result:hover {
 	color: #50af55;
+}
+
+.btn-back-result:focus {
+	box-shadow: none;
+	outline: 0;
 }
 
 .card-all-entity:hover {
