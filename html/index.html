@@ -14,7 +14,7 @@
 <body>
 	<!-- HEADER -->
 	<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" style="">
-		<i class="material-icons btn-switch-menu" style="margin-right: 20px; cursor: pointer;">dehaze</i>
+		<i class="material-icons btn-switch-menu" style="margin-right: 20px; cursor: pointer;" onclick="switchMenu()">dehaze</i>
 		<a class="navbar-brand" href="/">
 		    <font style="font-weight: 600; color: #50af55">Entity</font> Determiner
 		</a>
@@ -56,7 +56,7 @@
 		<div class="row">
 			<!-- LEFT -->
 			<div class="col-md-2">
-				<div style="top: 90px; position: sticky;">
+				<div id="menu" style="top: 90px; position: sticky;">
 					<ul class="nav flex-column">
 						<li class="nav-item left-menu left-menu-terbaru active">
 							<a class="nav-link" href="/">
@@ -196,7 +196,17 @@
 		$(document).ready(function(){
 	    	FirstLoad();
 	    	EntitiPopuler();
-	    })
+		})
+		
+		function switchMenu(self){
+			var menu = $('#menu')
+			var parentMenu = menu.parent();
+			(parentMenu.hasClass('col-md-1') ?
+				parentMenu.removeClass('col-md-1').addClass('col-md-2') :
+				parentMenu.removeClass('col-md-2').addClass('col-md-1')
+			)
+			menu.toggle();
+		}
 
 		function FirstLoad(){
 	        $.ajax({
