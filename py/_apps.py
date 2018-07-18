@@ -36,7 +36,10 @@ class CRUD(object):
 
         all_result = []
         for t in tables:
-            query = """SELECT * FROM {table_name} ORDER BY published_at DESC LIMIT 3""".format(table_name=t)
+            if t == 'indonesia':
+                query = """SELECT * FROM {table_name} ORDER BY published_at DESC LIMIT 5""".format(table_name=t)
+            else:
+                query = """SELECT * FROM {table_name} ORDER BY published_at DESC LIMIT 3""".format(table_name=t)
 
             connect = mdb.connect(db_host, db_user, db_password, db_name, charset=db_charset)
             cursor = connect.cursor()
@@ -69,7 +72,8 @@ class CRUD(object):
         db_name = 'entity_determiner'
         db_charset = 'utf8'
 
-        today = datetime.today() - timedelta(1)
+        today = datetime.today()
+        # today = datetime.today() - timedelta(1)
         today = today.strftime("%Y-%m-%d")
         start_today = today + " 00:00:00"
         end_today = today + " 23:59:59"
@@ -101,9 +105,8 @@ class CRUD(object):
             cnt[item] += 1
 
         sorted_cnt = sorted(cnt.items(), key=operator.itemgetter(1), reverse=True)
-        print(sorted_cnt)
 
-        return json.dumps(sorted_cnt[:10])
+        return json.dumps(sorted_cnt[:20])
 
     @staticmethod
     def category(cat,page):
@@ -113,7 +116,8 @@ class CRUD(object):
         db_name = 'entity_determiner'
         db_charset = 'utf8'
 
-        today = datetime.today() - timedelta(1)
+        today = datetime.today()
+        # today = datetime.today() - timedelta(1)
         today = today.strftime("%Y-%m-%d")
         start_today = today + " 00:00:00"
         end_today = today + " 23:59:59"
