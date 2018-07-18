@@ -63,7 +63,16 @@
 
 .left-menu.active {
 	background-color: #28a74529;
-	border-radius: 25px;
+	border-radius: 0px 50px 50px 0px;
+}
+.left-menu.active:before{
+	content: "";
+    display: block;
+    height: 100%;
+    width: 15px;
+    position: absolute;
+    left: -15px;
+    background-color: #28a74529;
 }
 
 .left-menu.active a{

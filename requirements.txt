@@ -1,1 +1,5 @@
-
+virtualenv
+mysqlclient
+requests
+gunicorn
+tqdm
