@@ -56,9 +56,10 @@ class CRUD(object):
                     'tagged_content': r[3],
                     'spoiler_content': r[4],
                     'entity': r[5],
-                    'url': r[6],
-                    'host': r[7],
-                    'published_at': CRUD.mod_tgl_indo(r[8].strftime('%w, %d, %m, %Y, %H:%M:%S'))
+                    'entity_label': r[6],
+                    'url': r[7],
+                    'host': r[8],
+                    'published_at': CRUD.mod_tgl_indo(r[9].strftime('%w, %d, %m, %Y, %H:%M:%S'))
                 }
                 all_result.append(json_result)
 
@@ -72,8 +73,8 @@ class CRUD(object):
         db_name = 'entity_determiner'
         db_charset = 'utf8'
 
-        today = datetime.today()
-        # today = datetime.today() - timedelta(1)
+        # today = datetime.today()
+        today = datetime.today() - timedelta(1)
         today = today.strftime("%Y-%m-%d")
         start_today = today + " 00:00:00"
         end_today = today + " 23:59:59"
@@ -116,8 +117,8 @@ class CRUD(object):
         db_name = 'entity_determiner'
         db_charset = 'utf8'
 
-        today = datetime.today()
-        # today = datetime.today() - timedelta(1)
+        # today = datetime.today()
+        today = datetime.today() - timedelta(1)
         today = today.strftime("%Y-%m-%d")
         start_today = today + " 00:00:00"
         end_today = today + " 23:59:59"
@@ -134,17 +135,109 @@ class CRUD(object):
         all_result = []
         for r in result:
             json_result = {
+                'category': cat,
                 'id': r[0],
                 'title': r[1],
                 'clean_content': r[2],
                 'tagged_content': r[3],
                 'spoiler_content': r[4],
                 'entity': r[5],
-                'url': r[6],
-                'host': r[7],
-                'published_at': CRUD.mod_tgl_indo(r[8].strftime('%w, %d, %m, %Y, %H:%M:%S'))
+                'entity_label': r[6],
+                'url': r[7],
+                'host': r[8],
+                'published_at': CRUD.mod_tgl_indo(r[9].strftime('%w, %d, %m, %Y, %H:%M:%S'))
             }
             all_result.append(json_result)
+
+        return json.dumps(all_result)
+
+    @staticmethod
+    def result(table, idx):
+        db_host = '127.0.0.1'
+        db_user = 'root'
+        db_password = 'qwerty'
+        db_name = 'entity_determiner'
+        db_charset = 'utf8'
+
+        query = """SELECT * FROM {table} WHERE id = {id}""".format(table=table, id=idx)
+
+        connect = mdb.connect(db_host, db_user, db_password, db_name, charset=db_charset)
+        cursor = connect.cursor()
+        cursor.execute(query)
+        result = cursor.fetchall()
+        connect.close()
+
+        all_result = []
+        for r in result:
+            el = r[6].split('*')
+            el_clean = []
+            for e in el:
+                if e not in el_clean:
+                    el_clean.append(e)
+
+            _el = []
+            for e in el_clean:
+                if e != '':
+                    _el.append(e.split('#'))
+
+            json_result = {
+                'id': r[0],
+                'title': r[1],
+                'clean_content': r[2],
+                'tagged_content': r[3],
+                'spoiler_content': r[4],
+                'entity': r[5],
+                'entity_label': _el,
+                'url': r[7],
+                'host': r[8],
+                'published_at': CRUD.mod_tgl_indo(r[9].strftime('%w, %d, %m, %Y, %H:%M:%S'))
+            }
+            all_result.append(json_result)
+
+        return json.dumps(all_result)
+
+    @staticmethod
+    def repository():
+        db_host = '127.0.0.1'
+        db_user = 'root'
+        db_password = 'qwerty'
+        db_name = 'entity_determiner'
+        db_charset = 'utf8'
+
+        tables = ['indonesia', 'dunia', 'bisnis', 'teknologi', 'hiburan', 'olahraga', 'science', 'kesehatan']
+
+        # today = datetime.today()
+        today = datetime.today() - timedelta(1)
+        today = today.strftime("%Y-%m-%d")
+        start_today = today + " 00:00:00"
+        end_today = today + " 23:59:59"
+
+        all_result = []
+        for t in tables:
+            query = """SELECT * FROM {table_name} WHERE published_at BETWEEN '{start_today}' AND '{end_today}' ORDER BY published_at DESC""".format(
+                table_name=t, start_today=start_today, end_today=end_today)
+
+            connect = mdb.connect(db_host, db_user, db_password, db_name, charset=db_charset)
+            cursor = connect.cursor()
+            cursor.execute(query)
+            result = cursor.fetchall()
+            connect.close()
+
+            for r in result:
+                json_result = {
+                    'category': t,
+                    'id': r[0],
+                    'title': r[1],
+                    'clean_content': r[2],
+                    'tagged_content': r[3],
+                    'spoiler_content': r[4],
+                    'entity': r[5],
+                    'entity_label': r[6],
+                    'url': r[7],
+                    'host': r[8],
+                    'published_at': CRUD.mod_tgl_indo(r[9].strftime('%w, %d, %m, %Y, %H:%M:%S'))
+                }
+                all_result.append(json_result)
 
         return json.dumps(all_result)
 

@@ -23,22 +23,30 @@ class Database(object):
                 try:
                     title, url, host, published_at = d
                     clean_content, spoiler_content = gc.get_content(url)
-                    tagged_content, entity = gn.edit_tagged_content(clean_content)
+                    tagged_content, entity, entity_label = gn.edit_tagged_content(clean_content)
                     tagged_content = '\n'.join(tagged_content)
+
                     final_ent = []
                     for ent in entity:
                         for e in ent:
                             final_ent.append(e)
                     entity = '*'.join(final_ent)
 
-                    save_to_db.append((title, clean_content, tagged_content, spoiler_content, entity, url, host, published_at))
+                    final_ent_label = []
+                    for entl in entity_label:
+                        for ent in entl:
+                            final_ent_label.append(ent[0] + '#')
+                            final_ent_label.append(ent[1] + '*')
+
+                    entity_label = ''.join(final_ent_label)
+                    save_to_db.append((title, clean_content, tagged_content, spoiler_content, entity, entity_label, url, host, published_at))
                 except:
                     pass
 
             print("Total data : %d" % len(save_to_db))
             query = """INSERT IGNORE INTO {table}
-                    (title, clean_content, tagged_content, spoiler_content, entity, url, host, published_at)
-                    VALUES (%s,%s,%s,%s,%s,%s,%s,%s)""".format(table=au['category'].lower())
+                    (title, clean_content, tagged_content, spoiler_content, entity, entity_label, url, host, published_at)
+                    VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)""".format(table=au['category'].lower())
             attr = tuple(save_to_db)
 
             connect = mdb.connect(db_host, db_user, db_password, db_name, charset=db_charset)

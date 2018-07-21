@@ -5,11 +5,17 @@
 }
 
 .title-news:hover {
-	color: #50af55;
+	color: #50af55 !important;
+    text-decoration: underline !important;
+    cursor: pointer;
 }
 
 .card {
 	border-radius: 0.5rem;
+}
+
+.title-category {
+	color: #50af55;
 }
 
 .card-headline:hover {
@@ -39,6 +45,12 @@
 	color: #50af55;
 	font-weight: 400;
 	font-size: 13px;
+}
+
+.footer:hover {
+	color: #50af55 !important;
+    text-decoration: underline !important;
+    cursor: pointer;
 }
 
 .left-menu{
@@ -374,7 +386,7 @@
 
 .btn-back-result {
 	border: none;
-	background-color: #f7f7f7;
+	background-color: #fff;
 	cursor: pointer;
 	margin-right: 20px;
 }
@@ -413,5 +425,5 @@
 }
 
 .table-hover tbody tr:hover {
-    background-color: #50af5588;
+    background-color: #46ae4c59;
 }

@@ -28,6 +28,17 @@ class CSS(object):
 app.add_route('/my_style.css', CSS())
 
 
+class JS(object):
+    def on_get(self, req, resp):
+        resp.status = falcon.HTTP_200
+        resp.content_type = 'text/javascript'
+        with open('js/my_js.js', 'r') as f:
+            resp.body = f.read()
+
+
+app.add_route('/my_js.js', JS())
+
+
 class LOGO(object):
     def on_get(self, req, resp):
         resp.status = falcon.HTTP_200
@@ -36,28 +47,6 @@ class LOGO(object):
 
 
 app.add_route('/logo_tab.png', LOGO())
-
-
-class Result(object):
-    def on_get(self, req, resp):
-        resp.status = falcon.HTTP_200
-        resp.content_type = 'text/html'
-        with open('html/result.html', 'r') as f:
-            resp.body = f.read()
-
-
-app.add_route('/result', Result())
-
-
-class Repository(object):
-    def on_get(self, req, resp):
-        resp.status = falcon.HTTP_200
-        resp.content_type = 'text/html'
-        with open('html/repository.html', 'r') as f:
-            resp.body = f.read()
-
-
-app.add_route('/repository', Repository())
 
 
 class Tag(object):
@@ -126,3 +115,28 @@ class Category(object):
 
 
 app.add_route('/category', Category())
+
+
+class Result(object):
+    def on_post(self, req, resp):
+        resp.status = falcon.HTTP_200
+        raw_json = req.stream.read()
+        result_json = json.loads(raw_json)
+
+        idx = result_json['idx']
+        table = result_json['table']
+
+        resp.body = CRUD.result(table,idx)
+
+
+app.add_route('/result', Result())
+
+
+class Repository(object):
+    def on_post(self, req, resp):
+        resp.status = falcon.HTTP_200
+        raw_json = req.stream.read()
+        resp.body = CRUD.repository()
+
+
+app.add_route('/repository', Repository())

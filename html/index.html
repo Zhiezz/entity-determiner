@@ -34,8 +34,8 @@
 	    		<li class="nav-item header-link">
 		        	<a class="nav-link" href="/">Headline</a>
 		    	</li>
-		    	<li class="nav-item header-link">
-		        	<a class="nav-link" href="/repository">Repository</a>
+		    	<li class="nav-item header-link" style="cursor: pointer;">
+		        	<a class="nav-link" onclick="Repository()">Repository</a>
 		      	</li>
 		      	<li class="nav-item header-link dropdown">
 		        	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Apps
@@ -53,9 +53,9 @@
 
 	<!-- BODY -->
 	<div class="container-fluid" style="margin-top: 70px">
-		<div class="row">
+		<div class="row row-utama">
 			<!-- LEFT -->
-			<div class="col-md-2">
+			<div class="col-md-2 col-utama-left">
 				<div style="top: 90px; position: sticky;">
 					<ul class="nav flex-column">
 						<li class="nav-item left-menu left-menu-terbaru active">
@@ -66,7 +66,7 @@
 						</li>
 					</ul>
 					
-					<hr style="margin: 5px 15px">
+					<hr style="margin: 15px 15px 5px">
 
 					<h6 style="margin: 18px 20px 5px 20px; font-weight: 500; font-size: 13px">KATEGORI</h6>
 
@@ -126,13 +126,13 @@
 					<h6 style="margin: 18px 20px 5px 20px; font-weight: 500; font-size: 13px">APPLICATION</h6>
 
 					<ul class="nav flex-column">
-						<li class="nav-item left-menu">
-							<a class="nav-link" href="/repository">
+						<li class="nav-item left-menu left-menu-repository">
+							<a class="nav-link" onclick="Repository()">
 								<i class="material-icons logo-left-menu">storage</i>
 								Repository
 							</a>
 						</li>
-						<li class="nav-item left-menu">
+						<li class="nav-item left-menu left-menu-tagged-corpus">
 							<a class="nav-link" href="/tag">
 								<i class="material-icons logo-left-menu">storage</i>
 								Tagged Corpus
@@ -143,15 +143,15 @@
 			</div>
 
 			<!-- MID -->
-			<div class="col-md-7">
+			<div class="col-md-7 col-utama-mid">
 				<div class="bucket">
 					
 				</div>
 			</div>
 
 			<!-- RIGHT -->
-			<div class="col-md-3">
-				<div style="top: 115px; position: sticky;">
+			<div class="col-md-3 col-utama-right">
+				<div style="top: 140px; position: sticky;">
 					<div class="card" style="background-color: #f8f9fa; border:none;">
 						<div class="card-body card-entity-populer">
 							<span>Dalam Berita</span>
@@ -167,7 +167,7 @@
 				<div class="card card-footer" style="background:none; border: none;">
 					<span>
 						<a href="/">Headline</a> -
-						<a href="/repository">Repository</a> -
+						<a class="footer" onclick="Repository()" style="color: #50af55">Repository</a> -
 						<a href="/tag">Tagged Word</a> -
 						<a href="/about">About</a> -
 						<a href="/help">Help</a>
@@ -191,158 +191,6 @@
 	crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-
-	<script>
-		$(document).ready(function(){
-	    	FirstLoad();
-	    	EntitiPopuler();
-	    })
-
-		function FirstLoad(){
-	        $.ajax({
-	          url: "/firstload",
-	          type: "post",
-	          contentType: 'HTML',
-	          dataType: 'json',
-	          success: function(data){
-	          	$('.bucket').append('\
-	          		<h5 style="margin: 10px 20px">Terbaru</h5>\
-					<div class="row-indonesia"></div>\
-					<h5 style="margin: 30px 20px 10px">Dunia</h5>\
-					<div class="row-dunia"></div>\
-					<h5 style="margin: 30px 20px 10px">Bisnis</h5>\
-					<div class="row-bisnis"></div>\
-					<h5 style="margin: 30px 20px 10px">Teknologi</h5>\
-					<div class="row-teknologi"></div>\
-					<h5 style="margin: 30px 20px 10px">Hiburan</h5>\
-					<div class="row-hiburan"></div>\
-					<h5 style="margin: 30px 20px 10px">Olahraga</h5>\
-					<div class="row-olahraga"></div>\
-					<h5 style="margin: 30px 20px 10px">Sains</h5>\
-					<div class="row-science"></div>\
-					<h5 style="margin: 30px 20px 10px">Kesehatan</h5>\
-					<div class="row-kesehatan"></div>\
-				')
-
-	          	$.each(data, function(index, data){
-	          		$('.row-'+ data.category).append('\
-	          			<div class="card card-headline" style="margin-bottom: 10px">\
-							<div class="card-body">\
-								<a class="title-news title-news-"'+ data.id +' href="/result" style="display: block;">'+ data.title +'</a>\
-								<span style="font-size: 11px; color: black">\
-								<img src="https://www.google.com/s2/favicons?domain='+ data.host +'" width="16" height="16" style="margin-right: 5px">\
-								<font style="font-weight: 700">'+ data.host +'</font> - '+ data.published_at +'</span>\
-								<hr style="margin: 10px 0px">\
-								<p style="font-size: 13px">'+ data.spoiler_content +'</p>\
-								<a href="/result" class="title-news title-news-"'+ data.id +' style="float:right; font-size: 11px; cursor: pointer;">Lihat Selengkapnya</a>\
-							</div> \
-						</div>\
-	          		')
-	          	})
-	          },
-	          error: function(){
-	            alert('Failure');
-	          }
-        	})
-        }
-
-        function EntitiPopuler(){
-        	$.ajax({
-	          url: "/entitipopuler",
-	          type: "post",
-	          contentType: 'HTML',
-	          dataType: 'json',
-	          success: function(data){
-	          	$.each(data, function(index, data){
-          			$('.card-entity-populer').append('\
-	          			<button class="entity-populer">'+ data[0] +'\
-							<span style="font-weight: 700; margin-left: 5px">\
-								'+ data[1] +'\
-							</span>\
-						</button>\
-          			')
-          		})
-          		$('.card-entity-populer').append('<hr style="margin: 10px 0px">\
-          			<a href="/" style="font-size: 13px; color: #50af55">Selengkapnya</a>')
-	          },
-	          error: function(){
-	            alert('Failure');
-	          }
-	        })
-        }
-
-        function capitalizeFirstLetter(string) {
-		    return string[0].toUpperCase() + string.slice(1);
-		}
-
-        function Category(category, logo, page){
-        	var global_logo = logo
-        	$('.left-menu').removeClass('active')
-        	$('.left-menu-'+category).addClass('active')
-        	$.ajax({
-	          url: "/category",
-	          type: "post",
-	          contentType: 'HTML',
-	          dataType: 'json',
-	          data: JSON.stringify({'category': category, 'page': page}),
-	          success: function(data){
-	          	if(page > 0){
-	          		$('.btn-load-more').hide()
-	          		$.each(data, function(index, data){
-		          		$('.row-'+ category).append('\
-		          			<div class="card card-headline" style="margin-bottom: 10px">\
-								<div class="card-body">\
-									<a class="title-news title-news-"'+ data.id +' href="/result" style="display: block;">'+ data.title +'</a>\
-									<span style="font-size: 11px; color: black">\
-									<img src="https://www.google.com/s2/favicons?domain='+ data.host +'" width="16" height="16" style="margin-right: 5px">\
-									<font style="font-weight: 700">'+ data.host +'</font> - '+ data.published_at +'</span>\
-									<hr style="margin: 10px 0px">\
-									<p style="font-size: 13px">'+ data.spoiler_content +'</p>\
-									<a href="/result" class="title-news title-news-"'+ data.id +' style="float:right; font-size: 11px; cursor: pointer;">Lihat Selengkapnya</a>\
-								</div> \
-							</div>\
-		          		')
-		          	})
-
-		          	var cat = "'"+category+"'"
-		          	var logo = "'"+global_logo+"'"
-		          	var tes = '<button onclick="Category('+cat+','+logo+','+(page + 10)+')" type="button" class="btn btn-primary btn-load-more">Load More</button>'
-		          	$('.row-'+ category).append(tes)
-	          	} else {
-	          		$('.bucket').html('')
-		          	$('.bucket').append('\
-		          		<h5 style="margin: 10px 20px">\
-		          		<i class="material-icons">'+ global_logo +'</i>\
-		          		'+ capitalizeFirstLetter(category) +'</h5>\
-						<div class="row-'+ category +'"></div>\
-					')
-		          	$.each(data, function(index, data){
-		          		$('.row-'+ category).append('\
-		          			<div class="card card-headline" style="margin-bottom: 10px">\
-								<div class="card-body">\
-									<a class="title-news title-news-"'+ data.id +' href="/result" style="display: block;">'+ data.title +'</a>\
-									<span style="font-size: 11px; color: black">\
-									<img src="https://www.google.com/s2/favicons?domain='+ data.host +'" width="16" height="16" style="margin-right: 5px">\
-									<font style="font-weight: 700">'+ data.host +'</font> - '+ data.published_at +'</span>\
-									<hr style="margin: 10px 0px">\
-									<p style="font-size: 13px">'+ data.spoiler_content +'</p>\
-									<a href="/result" class="title-news title-news-"'+ data.id +' style="float:right; font-size: 11px; cursor: pointer;">Lihat Selengkapnya</a>\
-								</div> \
-							</div>\
-		          		')
-		          	})
-
-		          	var cat = "'"+category+"'"
-		          	var logo = "'"+global_logo+"'"
-		          	var tes = '<button onclick="Category('+cat+','+logo+','+(page + 10)+')" type="button" class="btn btn-primary btn-load-more">Load More</button>'
-		          	$('.row-'+ category).append(tes)
-	          	}
-	          },
-	          error: function(e){
-	            alert('Failure');
-	          }
-	        })
-        }
-	</script>
+	<script type="text/javascript" src="/my_js.js"></script>
 </body>
 </html>
