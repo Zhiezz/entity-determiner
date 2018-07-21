@@ -39,49 +39,6 @@ class JS(object):
 app.add_route('/my_js.js', JS())
 
 
-class LOGO(object):
-    def on_get(self, req, resp):
-        resp.status = falcon.HTTP_200
-        with open('assets/logo_tab.png', 'r') as f:
-            resp.body = f.read()
-
-
-app.add_route('/logo_tab.png', LOGO())
-
-
-class Tag(object):
-    def on_get(self, req, resp):
-        resp.status = falcon.HTTP_200
-        resp.content_type = 'text/html'
-        with open('html/tag.html', 'r') as f:
-            resp.body = f.read()
-
-
-app.add_route('/tag', Tag())
-
-
-class About(object):
-    def on_get(self, req, resp):
-        resp.status = falcon.HTTP_200
-        resp.content_type = 'text/html'
-        with open('html/about.html', 'r') as f:
-            resp.body = f.read()
-
-
-app.add_route('/about', About())
-
-
-class Help(object):
-    def on_get(self, req, resp):
-        resp.status = falcon.HTTP_200
-        resp.content_type = 'text/html'
-        with open('html/help.html', 'r') as f:
-            resp.body = f.read()
-
-
-app.add_route('/help', Help())
-
-
 class FirstLoad(object):
     def on_post(self, req, resp):
         resp.status = falcon.HTTP_200
@@ -96,7 +53,11 @@ class EntitiPopuler(object):
     def on_post(self, req, resp):
         resp.status = falcon.HTTP_200
         raw_json = req.stream.read()
-        resp.body = CRUD.entitipopuler()
+        result_json = json.loads(raw_json)
+
+        limit = result_json['limit']
+
+        resp.body = CRUD.entitipopuler(limit)
 
 
 app.add_route('/entitipopuler', EntitiPopuler())
@@ -140,3 +101,27 @@ class Repository(object):
 
 
 app.add_route('/repository', Repository())
+
+
+class Tag(object):
+    def on_post(self, req, resp):
+        resp.status = falcon.HTTP_200
+        raw_json = req.stream.read()
+        resp.body = CRUD.tag()
+
+
+app.add_route('/tag', Tag())
+
+
+class EntitySearch(object):
+    def on_post(self, req, resp):
+        resp.status = falcon.HTTP_200
+        raw_json = req.stream.read()
+        result_json = json.loads(raw_json)
+
+        word = result_json['word']
+
+        resp.body = CRUD.search(word)
+
+
+app.add_route('/entity_search', EntitySearch())

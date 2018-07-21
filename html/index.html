@@ -26,8 +26,8 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<form class="form-inline ml-auto">
 				<div class="header-search">
-		     		<input class="form-control mr-sm-2 index-search" type="search" placeholder="Search" aria-label="Search">
-		     		<i class="material-icons" style="vertical-align: middle; margin-right: 7px; color: #999">search</i>
+		     		<input class="form-control mr-sm-2 index-search" placeholder="Search">
+		     		<i class="material-icons btn-search" style="vertical-align: middle; margin-right: 7px; color: #999">search</i>
 	     		</div>
 	    	</form>
 			<ul class="navbar-nav ml-auto">
@@ -41,10 +41,10 @@
 		        	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Apps
 		        	</a>
 			        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" style="font-size: 13px; font-weight: 300">
-			        	<a class="dropdown-item" href="/tag">Tagged Corpus</a>
+			        	<a class="dropdown-item" onclick="Tag()" style="cursor: pointer;">Tagged Corpus</a>
 			        	<div class="dropdown-divider"></div>
-			        	<a class="dropdown-item" href="/about">About</a>
-			        	<a class="dropdown-item" href="/help">Help</a>
+			        	<a class="dropdown-item" onclick="About()" style="cursor: pointer;">About</a>
+			        	<a class="dropdown-item" href="/help" style="cursor: pointer;">Help</a>
 			        </div>
 		      	</li>
 	    	</ul>
@@ -55,7 +55,7 @@
 	<div class="container-fluid" style="margin-top: 70px">
 		<div class="row row-utama">
 			<!-- LEFT -->
-			<div class="col-md-2">
+			<div class="col-md-2 col-utama-left">
 				<div id="menu" style="top: 90px; position: sticky;">
 					<ul class="nav flex-column">
 						<li class="nav-item left-menu left-menu-terbaru active">
@@ -126,6 +126,12 @@
 					<h6 style="margin: 18px 20px 5px 20px; font-weight: 500; font-size: 13px">APPLICATION</h6>
 
 					<ul class="nav flex-column">
+						<li class="nav-item left-menu left-menu-all-entity">
+							<a class="nav-link" onclick="AllEntity(100)">
+								<i class="material-icons logo-left-menu">storage</i>
+								Today Entity
+							</a>
+						</li>
 						<li class="nav-item left-menu left-menu-repository">
 							<a class="nav-link" onclick="Repository()">
 								<i class="material-icons logo-left-menu">storage</i>
@@ -133,7 +139,7 @@
 							</a>
 						</li>
 						<li class="nav-item left-menu left-menu-tagged-corpus">
-							<a class="nav-link" href="/tag">
+							<a class="nav-link" onclick="Tag()">
 								<i class="material-icons logo-left-menu">storage</i>
 								Tagged Corpus
 							</a>
@@ -144,7 +150,7 @@
 
 			<!-- MID -->
 			<div class="col-md-7 col-utama-mid">
-				<div class="bucket">
+				<div style="top: 90px" class="bucket">
 					
 				</div>
 			</div>
@@ -168,8 +174,8 @@
 					<span>
 						<a href="/">Headline</a> -
 						<a class="footer" onclick="Repository()" style="color: #50af55">Repository</a> -
-						<a href="/tag">Tagged Word</a> -
-						<a href="/about">About</a> -
+						<a class="footer" onclick="Tag()" style="color: #50af55">Tagged Word</a> -
+						<a class="footer" onclick="About()" style="color: #50af55">About</a> -
 						<a href="/help">Help</a>
 					</span>
 					<span style="color:#777; font-weight: 300">

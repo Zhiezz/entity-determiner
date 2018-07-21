@@ -38,8 +38,9 @@ class GetNER(object):
                     if ent in duplicate_word:
                         pass
                     else:
-                        duplicate_word.append(ent)
-                        xsent_final = xsent_final.replace(ent, '<mark class="mark {tag}" data-entitas="{ent}">{ent}<span class="tag">{tag}</span></mark>'.format(ent=ent, tag=tag))
+                        if ent != '.com':
+                            duplicate_word.append(ent)
+                            xsent_final = xsent_final.replace(ent, '<mark class="mark {tag}" data-entitas="{ent}">{ent}<span class="tag">{tag}</span></mark>'.format(ent=ent, tag=tag))
 
                 result_text.append("<p>" + xsent_final + "</p>")
                 result_ent.append(all_ent)

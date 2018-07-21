@@ -134,11 +134,12 @@
 
 .header-search {
 	border-bottom: 1px solid #999;
-	border-radius: 0px;"
+	border-radius: 0px;
 }
 
 .index-search {
 	border: none;
+	border-radius: 0px;
 	width: 500px !important;
 	font-size: 15px;
 	font-weight: 300;
@@ -283,54 +284,6 @@
 	padding: 3px 6px 3px 6px;
 }
 
-.ATTRIBUTE {
-	border: 1px solid #82589f !important;
-}
-
-.ATTRIBUTE:hover {
-	background-color: #82589f38;
-}
-
-.ORG {
-	border: 1px solid #e67e22 !important;
-}
-
-.ORG:hover {
-	background-color: #e67d2256;
-}
-
-.PERSON {
-	border: 1px solid #4693c3 !important;
-}
-
-.PERSON:hover {
-	background-color: #297fb94f;
-}
-
-.EVENT {
-	border: 1px solid #27ae60 !important;
-}
-
-.EVENT:hover {
-	background-color: #27ae5f56;
-}
-
-.FACILITY {
-	border: 1px solid #2c3e50 !important;
-}
-
-.FACILITY:hover {
-	background-color: #16a08454;
-}
-
-.GPE {
-	border: 1px solid #c0392b !important;
-}
-
-.GPE:hover {
-	background-color: #c03a2b56;
-}
-
 .tag {
 	font-size: 0.6em;
 	font-weight: bold;
@@ -341,28 +294,135 @@
 	margin-left: 0.5rem;
 }
 
-.ATTRIBUTE .tag{
-	color: #82589f !important;
+.ATTRIBUTE {
+	border: 1px solid #2ecc71 !important;
+	background-color: #2ecc7159;
 }
 
-.ORG .tag{
-	color: #e67e22 !important;
+.ATTRIBUTE:hover {
+	background-color: #fff;
+}
+
+.ATTRIBUTE .tag{
+	color: #2ecc71 !important;
+}
+
+.PERSON {
+	border: 1px solid #3498db !important;
+	background-color: #3498db59;
+}
+
+.PERSON:hover {
+	background-color: #fff;
 }
 
 .PERSON .tag{
-	color: #4693c3 !important;
+	color: #3498db !important;
 }
 
-.EVENT .tag{
-	color: #27ae60 !important;
+
+.ORG {
+	border: 1px solid #9b59b6 !important;
+	background-color: #9b59b659;
 }
 
-.FACILITY .tag{
-	color: #2c3e50 !important;
+.ORG:hover {
+	background-color: #fff;
+}
+
+.ORG .tag{
+	color: #9b59b6 !important;
+}
+
+.GPE {
+	border: 1px solid #95a5a6 !important;
+	background-color: #95a5a659;
+}
+
+.GPE:hover {
+	background-color: #fff;
 }
 
 .GPE .tag{
-	color: #c0392b !important;
+	color: #95a5a6 !important;
+}
+
+.MERK {
+	border: 1px solid #e67e22 !important;
+	background-color: #e67e2259;
+}
+
+.MERK:hover {
+	background-color: #fff;
+}
+
+.MERK .tag{
+	color: #e67e22 !important;
+}
+
+.CONCEPT {
+	border: 1px solid #f1c40f !important;
+	background-color: #f1c40f59;
+}
+
+.CONCEPT:hover {
+	background-color: #fff;
+}
+
+.CONCEPT .tag{
+	color: #f1c40f !important;
+}
+
+.EVENT {
+	border: 1px solid #e74c3c !important;
+	background-color: #e74c3c59;
+}
+
+.EVENT:hover {
+	background-color: #fff;
+}
+
+.EVENT .tag{
+	color: #e74c3c !important;
+}
+
+.FACILITY {
+	border: 1px solid #16a085 !important;
+	background-color: #16a08559;
+}
+
+.FACILITY:hover {
+	background-color: #fff;
+}
+
+.FACILITY .tag{
+	color: #16a085 !important;
+}
+
+.PRODUCT {
+	border: 1px solid #bdc3c7 !important;
+	background-color: #bdc3c759;
+}
+
+.PRODUCT:hover {
+	background-color: #fff;
+}
+
+.PRODUCT .tag{
+	color: #bdc3c7 !important;
+}
+
+.LOC {
+	border: 1px solid #8e44ad !important;
+	background-color: #8e44ad59;
+}
+
+.LOC:hover {
+	background-color: #fff;
+}
+
+.LOC .tag{
+	color: #8e44ad !important;
 }
 
 .btn-load-more {
@@ -388,7 +448,7 @@
 	border: none;
 	background-color: #fff;
 	cursor: pointer;
-	margin-right: 20px;
+	margin: 40px 20px 0px 0px;
 }
 
 .btn-back-result:hover {
