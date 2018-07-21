@@ -14,7 +14,7 @@
 <body style="background-color: #f7f7f7">
 	<!-- HEADER -->
 	<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" style="">
-		<i class="material-icons btn-switch-menu" style="margin-right: 20px; cursor: pointer;">dehaze</i>
+		<i class="material-icons btn-switch-menu" style="margin-right: 20px; cursor: pointer;" onclick="switchMenu(this)">dehaze</i>
 		<a class="navbar-brand" href="/">
 		    <font style="font-weight: 600; color: #50af55">Entity</font> Determiner
 		</a>
@@ -141,7 +141,92 @@
 					</ul>
 				</div>
 			</div-->
-			<div class="col-md-1"></div>
+			<div class="col-md-1">
+				<div id="menu" style="top: 90px; position: sticky; display: none;">
+					<ul class="nav flex-column">
+						<li class="nav-item left-menu left-menu-terbaru active">
+							<a class="nav-link" href="/">
+								<i class="material-icons logo-left-menu">home</i>
+								Terbaru
+							</a>
+						</li>
+					</ul>
+					
+					<hr style="margin: 5px 15px">
+
+					<h6 style="margin: 18px 20px 5px 20px; font-weight: 500; font-size: 13px">KATEGORI</h6>
+
+					<ul class="nav flex-column">
+						<li class="nav-item left-menu left-menu-dunia">
+							<a class="nav-link" onclick="Category('dunia','public',0)">
+								<i class="material-icons logo-left-menu">public</i>
+								Dunia
+							</a>
+						</li>
+						<li class="nav-item left-menu left-menu-indonesia">
+							<a class="nav-link" onclick="Category('indonesia','room',0)">
+								<i class="material-icons logo-left-menu">room</i>
+								Indonesia
+							</a>
+						</li>
+						<li class="nav-item left-menu left-menu-bisnis">
+							<a class="nav-link" onclick="Category('bisnis','business',0)">
+								<i class="material-icons logo-left-menu">business</i>
+								Bisnis
+							</a>
+						</li>
+						<li class="nav-item left-menu left-menu-teknologi">
+							<a class="nav-link" onclick="Category('teknologi','memory',0)">
+								<i class="material-icons logo-left-menu">memory</i>
+								Teknologi
+							</a>
+						</li>
+						<li class="nav-item left-menu left-menu-hiburan">
+							<a class="nav-link" onclick="Category('hiburan','local_movies',0)">
+								<i class="material-icons logo-left-menu">local_movies</i>
+								Hiburan
+							</a>
+						</li>
+						<li class="nav-item left-menu left-menu-olahraga">
+							<a class="nav-link" onclick="Category('olahraga','directions_bike',0)">
+								<i class="material-icons logo-left-menu">directions_bike</i>
+								Olahraga
+							</a>
+						</li>
+						<li class="nav-item left-menu left-menu-science">
+							<a class="nav-link" onclick="Category('science','home',0)">
+								<i class="material-icons logo-left-menu">home</i>
+								Science
+							</a>
+						</li>
+						<li class="nav-item left-menu left-menu-kesehatan">
+							<a class="nav-link" onclick="Category('kesehatan','fitness_center',0)">
+								<i class="material-icons logo-left-menu">fitness_center</i>
+								Kesehatan
+							</a>
+						</li>
+					</ul>
+
+					<hr style="margin: 5px 15px">
+
+					<h6 style="margin: 18px 20px 5px 20px; font-weight: 500; font-size: 13px">APPLICATION</h6>
+
+					<ul class="nav flex-column">
+						<li class="nav-item left-menu">
+							<a class="nav-link" href="/repository">
+								<i class="material-icons logo-left-menu">storage</i>
+								Repository
+							</a>
+						</li>
+						<li class="nav-item left-menu">
+							<a class="nav-link" href="/tag">
+								<i class="material-icons logo-left-menu">storage</i>
+								Tagged Corpus
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
 			<!-- MID -->
 			<div class="col-md-7" style="margin-top: 7px">
 				<button class="btn-back-result" onclick="location.href = '/';">
@@ -195,52 +280,58 @@
 					<div class="card-body">
 						<div class="row" style="padding: 0px 10px">
 							<div class="col-md-6" style="padding: 10px 10px">
-								<a class="news-lainya" href="#">Selain Novanto, KPK Cari Pihak Lain yang terlibat e-KTP</a>
+								<img src="https://www.google.com/s2/favicons?domain=www.liputan6.com" width="16" height="16" style="margin-right: 5px">
 								<span style="font-size: 10px; color: black">
 									<font style="font-weight: 700">obsessionnews.com</font>
-									 - Rabu, 25/05/1995
 								</span>
+								<a class="news-lainya" href="#">Selain Novanto, KPK Cari Pihak Lain yang terlibat e-KTP</a>
+								<time style="font-size: 10px;opacity: .7;">Rabu, 25/05/1995</time>
 							</div>
 							<div class="col-md-6" style="padding: 10px 10px">
-								<a class="news-lainya" href="#">Selain Novanto, KPK Cari Pihak Lain yang terlibat e-KTP</a>
+								<img src="https://www.google.com/s2/favicons?domain=www.liputan6.com" width="16" height="16" style="margin-right: 5px">
 								<span style="font-size: 10px; color: black">
 									<font style="font-weight: 700">obsessionnews.com</font>
-									 - Rabu, 25/05/1995
 								</span>
-							</div>
-						</div>
-
-						<div class="row" style="padding: 0px 10px">
-							<div class="col-md-6" style="padding: 10px 10px">
 								<a class="news-lainya" href="#">Selain Novanto, KPK Cari Pihak Lain yang terlibat e-KTP</a>
-								<span style="font-size: 10px; color: black">
-									<font style="font-weight: 700">obsessionnews.com</font>
-									 - Rabu, 25/05/1995
-								</span>
-							</div>
-							<div class="col-md-6" style="padding: 10px 10px">
-								<a class="news-lainya" href="#">Selain Novanto, KPK Cari Pihak Lain yang terlibat e-KTP</a>
-								<span style="font-size: 10px; color: black">
-									<font style="font-weight: 700">obsessionnews.com</font>
-									 - Rabu, 25/05/1995
-								</span>
+								<time style="font-size: 10px;opacity: .7;">Rabu, 25/05/1995</time>
 							</div>
 						</div>
 
 						<div class="row" style="padding: 0px 10px">
 							<div class="col-md-6" style="padding: 10px 10px">
-								<a class="news-lainya" href="#">Selain Novanto, KPK Cari Pihak Lain yang terlibat e-KTP</a>
+								<img src="https://www.google.com/s2/favicons?domain=www.liputan6.com" width="16" height="16" style="margin-right: 5px">
 								<span style="font-size: 10px; color: black">
 									<font style="font-weight: 700">obsessionnews.com</font>
-									 - Rabu, 25/05/1995
 								</span>
+								<a class="news-lainya" href="#">Selain Novanto, KPK Cari Pihak Lain yang terlibat e-KTP</a>
+								<time style="font-size: 10px;opacity: .7;">Rabu, 25/05/1995</time>
 							</div>
 							<div class="col-md-6" style="padding: 10px 10px">
-								<a class="news-lainya" href="#">Selain Novanto, KPK Cari Pihak Lain yang terlibat e-KTP</a>
+								<img src="https://www.google.com/s2/favicons?domain=www.liputan6.com" width="16" height="16" style="margin-right: 5px">
 								<span style="font-size: 10px; color: black">
 									<font style="font-weight: 700">obsessionnews.com</font>
-									 - Rabu, 25/05/1995
 								</span>
+								<a class="news-lainya" href="#">Selain Novanto, KPK Cari Pihak Lain yang terlibat e-KTP</a>
+								<time style="font-size: 10px;opacity: .7;">Rabu, 25/05/1995</time>
+							</div>
+						</div>
+
+						<div class="row" style="padding: 0px 10px">
+							<div class="col-md-6" style="padding: 10px 10px">
+								<img src="https://www.google.com/s2/favicons?domain=www.liputan6.com" width="16" height="16" style="margin-right: 5px">
+								<span style="font-size: 10px; color: black">
+									<font style="font-weight: 700">obsessionnews.com</font>
+								</span>
+								<a class="news-lainya" href="#">Selain Novanto, KPK Cari Pihak Lain yang terlibat e-KTP</a>
+								<time style="font-size: 10px;opacity: .7;">Rabu, 25/05/1995</time>
+							</div>
+							<div class="col-md-6" style="padding: 10px 10px">
+								<img src="https://www.google.com/s2/favicons?domain=www.liputan6.com" width="16" height="16" style="margin-right: 5px">
+								<span style="font-size: 10px; color: black">
+									<font style="font-weight: 700">obsessionnews.com</font>
+								</span>
+								<a class="news-lainya" href="#">Selain Novanto, KPK Cari Pihak Lain yang terlibat e-KTP</a>
+								<time style="font-size: 10px;opacity: .7;">Rabu, 25/05/1995</time>
 							</div>
 						</div>
 					</div>
@@ -341,6 +432,15 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 
 	<script>
+		function switchMenu(self){
+			var menu = $('#menu')
+			var parentMenu = menu.parent();
+			(parentMenu.hasClass('col-md-1') ?
+				parentMenu.removeClass('col-md-1').addClass('col-md-2') :
+				parentMenu.removeClass('col-md-2').addClass('col-md-1')
+			)
+			menu.toggle();
+		}
 	</script>
 </body>
 </html>

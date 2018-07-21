@@ -3,6 +3,16 @@ $(document).ready(function(){
 	EntitiPopuler();
 })
 
+function switchMenu(self){
+    var menu = $('#menu')
+    var parentMenu = menu.parent();
+    (parentMenu.hasClass('col-md-1') ?
+        parentMenu.removeClass('col-md-1').addClass('col-md-2') :
+        parentMenu.removeClass('col-md-2').addClass('col-md-1')
+    )
+    menu.toggle();
+}
+
 function FirstLoad(){
     $.ajax({
       url: "/firstload",
