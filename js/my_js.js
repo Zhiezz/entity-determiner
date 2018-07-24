@@ -342,6 +342,7 @@ function ResultPage(table, idx){
 }
 
 function BeritaLainya(){
+	console.log("Berita Lainya")
 	// <h5 style="margin: 40px 20px 5px 20px; font-weight: 500; font-size: 20px">BERITA LAINYA</h5>\
 	// <div class="row">\
 	// 	<div class="col-md-6" style="padding-right: 5px">\
@@ -415,7 +416,7 @@ function Tag(){
 	    	$('.bucket').html("")
 			$('.col-utama-right').html("")
 			$('.bucket').append("\
-		      	<h5 class='title-category' style='margin: 40px 10px 10px'>Tagged Corpus</h5>\
+		      	<h5 class='title-category' style='margin: 40px 10px 10px'>Indonesia Manually Tagged Corpus (UI)</h5>\
 				<div class='card card-headline' style='margin-bottom: 10px'>\
 					<div class='card-body'>\
 						<table class='table table-hover' style='font-size: 13px'>\
