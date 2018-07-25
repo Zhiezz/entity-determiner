@@ -21,7 +21,7 @@ function FirstLoad(){
       dataType: 'json',
       success: function(data){
       	$('.bucket').append("\
-      		<h5 class='title-category' style='margin: 40px 10px 10px'>Terbaru</h5>\
+      		<h5 class='title-category' style='margin: 20px 10px 10px'>Terbaru</h5>\
 			<div class='row-indonesia'></div>\
 			<h5 class='title-category' style='margin: 30px 10px 10px'>\
 				<i class='material-icons' style='vertical-align: bottom'>more_vert</i>\
@@ -211,7 +211,7 @@ function Category(category, logo, page){
       		$('.col-utama-mid').html("")
 			$('.col-utama-right').html("")
 			$('.col-utama-mid').append('\
-          		<h5 style="margin: 40px 20px 10px; color: #50af55"">\
+          		<h5 style="margin: 20px 20px 10px; color: #50af55"">\
           		<i class="material-icons" style="vertical-align: bottom; margin-right: 5px; color: #50af55">'+ global_logo +'</i>\
           		'+ capitalizeFirstLetter(category) +'</h5>\
 				<div class="row-'+ category +'"></div>\
