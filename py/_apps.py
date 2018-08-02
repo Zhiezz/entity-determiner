@@ -73,8 +73,8 @@ class CRUD(object):
         db_name = 'entity_determiner'
         db_charset = 'utf8'
 
-        today = datetime.today()
-        # today = datetime.today() - timedelta(1)
+        # today = datetime.today()
+        today = datetime.today() - timedelta(1)
         today = today.strftime("%Y-%m-%d")
         start_today = today + " 00:00:00"
         end_today = today + " 23:59:59"
@@ -117,8 +117,8 @@ class CRUD(object):
         db_name = 'entity_determiner'
         db_charset = 'utf8'
 
-        today = datetime.today()
-        # today = datetime.today() - timedelta(1)
+        # today = datetime.today()
+        today = datetime.today() - timedelta(1)
         today = today.strftime("%Y-%m-%d")
         start_today = today + " 00:00:00"
         end_today = today + " 23:59:59"
@@ -213,8 +213,8 @@ class CRUD(object):
 
         tables = ['indonesia', 'dunia', 'bisnis', 'teknologi', 'hiburan', 'olahraga', 'science', 'kesehatan']
 
-        today = datetime.today()
-        # today = datetime.today() - timedelta(1)
+        # today = datetime.today()
+        today = datetime.today() - timedelta(1)
         today = today.strftime("%Y-%m-%d")
         start_today = today + " 00:00:00"
         end_today = today + " 23:59:59"
@@ -304,4 +304,46 @@ class CRUD(object):
 
         return json.dumps((all_result, all_category))
 
+    @staticmethod
+    def statistik():
+        db_host = '127.0.0.1'
+        db_user = 'root'
+        db_password = 'qwerty'
+        db_name = 'entity_determiner'
+        db_charset = 'utf8'
+        tables = ['indonesia', 'dunia', 'bisnis', 'teknologi', 'hiburan', 'olahraga', 'science', 'kesehatan']
 
+        # today = datetime.today()
+        today = datetime.today() - timedelta(1)
+        today = today.strftime("%Y-%m-%d")
+        start_today = today + " 00:00:00"
+        end_today = today + " 23:59:59"
+
+        all_result = []
+        for t in tables:
+            query = """SELECT entity FROM {table_name} WHERE published_at BETWEEN '{start_today}' AND '{end_today}' ORDER BY published_at DESC""".format(table_name=t, start_today=start_today, end_today=end_today)
+
+            connect = mdb.connect(db_host, db_user, db_password, db_name, charset=db_charset)
+            cursor = connect.cursor()
+            cursor.execute(query)
+            result = cursor.fetchall()
+            connect.close()
+
+            entity = []
+            for r in result:
+                entity.append(r[0].split('*'))
+
+            all_entity = []
+            for ent in entity:
+                for e in ent:
+                    if len(e) > 2:
+                        all_entity.append(e)
+
+            jsond = {
+                'category': t,
+                'count': len(result),
+                'entitas': all_entity[:5]
+            }
+            all_result.append(jsond)
+
+        return json.dumps(all_result)

@@ -113,9 +113,50 @@ function EntitiPopuler(limit){
 function Statistik(){
     $('.left-menu').removeClass('active')
     $(this).addClass('active')
-    $('.bucket').html("")
-    $('.col-utama-mid').html('')
-    $('.col-utama-mid').html('INI STATSTIK PAGE')
+    $.ajax({
+    	url: "/statistik",
+	    type: "post",
+	    contentType: 'HTML',
+	    dataType: 'json',
+	    success: function(data){
+
+	    	$('.bucket').html("")
+            $('.col-utama-mid').html('')
+            var cat = "";
+            $.each(data, function(index, data){
+                $('.col-utama-mid').append("\
+                    <h5 class='title-category' style='margin: 10px 10px 10px'>"+capitalizeFirstLetter(data.category)+"<span style='font-size: 16px; color: #999;margin-top: 5px;float: right;'>Total Artikel "+data.count+"</span></h5>\
+                    <div class='card card-headline card-statistik' style='margin: 20px 0px;'>\
+                        <div class='card-body'>\
+                            <table class='table table-hover' style='font-size: 13px'>\
+                                <thead>\
+                                    <tr>\
+                                        <th scope='col' style='width: 75px!important;'></th>\
+                                        <th scope='col'>Entitas Populer</th>\
+                                    </tr>\
+                                </thead>\
+                                \
+                                <tbody class='body-table-"+data.category+"'>\
+                                </tbody>\
+                            </table>\
+                        </div> \
+                    </div>\
+                ")
+                cat = data.category;
+                $.each(data.entitas, function(index, value){
+                    $('.body-table-'+cat).append('\
+                        <tr>\
+                            <th scope="row">'+(index+1)+'</th>\
+                            <td>'+value+'</td>\
+                        </tr>\
+                    ')
+                });
+            });
+	    },
+	  	error: function(e){
+      		alert('Failure');
+      	}
+    })
 }
 
 function AllEntity(limit){

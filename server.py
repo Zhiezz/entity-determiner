@@ -125,3 +125,13 @@ class EntitySearch(object):
 
 
 app.add_route('/entity_search', EntitySearch())
+
+
+class Statistik(object):
+    def on_post(self, req, resp):
+        resp.status = falcon.HTTP_200
+        raw_json = req.stream.read()
+        resp.body = CRUD.statistik()
+
+
+app.add_route('/statistik', Statistik())
