@@ -3,3 +3,7 @@ mysqlclient
 requests
 gunicorn
 tqdm
+feedparser
+goose3
+spacy
+falcon

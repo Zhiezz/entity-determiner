@@ -428,7 +428,7 @@
 .btn-load-more {
 	border-radius: 0.5rem;
     display: block;
-    margin: 30px auto 0px;
+    margin: 30px auto 30px;
     color: #fff;
     background-color: #4faf55;
     border-color: #39893e;
@@ -448,7 +448,7 @@
 	border: none;
 	background-color: #fff;
 	cursor: pointer;
-	margin: 40px 20px 0px 0px;
+	margin: 10px 20px 0px 0px;
 }
 
 .btn-back-result:hover {
@@ -486,4 +486,12 @@
 
 .table-hover tbody tr:hover {
     background-color: #46ae4c59;
+}
+
+.col-utama-left{
+    -webkit-transition: 200ms ease-in-out;
+    -moz-transition: 200ms ease-in-out;
+    -o-transition: 200ms ease-in-out;
+    -ms-transition: 200ms ease-in-out;
+    transition: 200ms ease-in-out;
 }

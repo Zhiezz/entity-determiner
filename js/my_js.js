@@ -3,7 +3,7 @@ $(document).ready(function(){
 	EntitiPopuler(20);
 })
 
-function switchMenu(self){
+function switchMenu(){
     var menu = $('#menu')
     var parentMenu = menu.parent();
     (parentMenu.hasClass('col-md-1') ?
@@ -108,6 +108,14 @@ function EntitiPopuler(limit){
         alert('Failure');
       }
     })
+}
+
+function Statistik(){
+    $('.left-menu').removeClass('active')
+    $(this).addClass('active')
+    $('.bucket').html("")
+    $('.col-utama-mid').html('')
+    $('.col-utama-mid').html('INI STATSTIK PAGE')
 }
 
 function AllEntity(limit){
@@ -275,6 +283,7 @@ function ResultPage(table, idx){
       dataType: 'json',
       data: JSON.stringify({'idx': idx, 'table': table}),
       success: function(data){
+      	switchMenu();
       	data = data[0]
       	var cat = "'" + table + "'"
       	$('.col-utama-mid').append('\
@@ -380,13 +389,13 @@ function Repository(){
 	    dataType: 'json',
 	    success: function(data){
 	    	$('.bucket').html("")
-			$('.col-utama-right').html("")
-			$('.bucket').append("\
+			$('.col-utama-mid').html("")
+			$('.col-utama-mid').append("\
 		      		<h5 class='title-category' style='margin: 40px 10px 10px'>Repository</h5>\
 		      ")
 			$.each(data, function(index, data){
 				var cat = "'"+data.category+"'"
-	      		$('.bucket').append('\
+	      		$('.col-utama-mid').append('\
 	      			<div class="card card-headline" style="margin-bottom: 10px">\
 						<div class="card-body">\
 							<a onclick="ResultPage('+cat+','+data.id+')" class="title-news title-news-'+ data.id +'" style="display: block;">'+ data.title +'</a>\
