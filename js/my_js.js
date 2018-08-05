@@ -535,41 +535,50 @@ function EntitySearch(word){
 	    dataType: 'json',
 	    data: JSON.stringify({'word': word}),
 	    success: function(data){
-			$('.bucket').html("")
-			$('.col-utama-mid').html('')
-			$('.col-utama-mid').append('\
-          		<h5 style="margin: 40px 20px 10px">Hasil pencarian kata kunci "'+ word +'"</h5>\
-          		<hr style="margin-top: 13px">\
-			')
-
-			var res_cat = data[1];
-			$.each(res_cat, function(index, res_cat){
-				console.log(res_cat)
+			if(data != null && data != ""){
+				$('.bucket').html("")
+				$('.col-utama-mid').html('')
 				$('.col-utama-mid').append('\
-					<h5 class="title-category" style="margin: 30px 20px 10px">\
-						<i class="material-icons" style="vertical-align: bottom">more_vert</i>\
-						'+capitalizeFirstLetter(res_cat)+'\
-					</h5>\
-					<div class="row-'+res_cat+'"></div>');
-			})
-
-			var res_dt = data[0];
-			$.each(res_dt, function(index, res_dt){
-      			var cat = "'"+res_dt.category+"'"
-          		$('.row-'+ res_dt.category).append('\
-          			<div class="card card-headline" style="margin-bottom: 10px">\
-						<div class="card-body">\
-							<a onclick="ResultPage('+cat+','+res_dt.id+')" class="title-news title-news-'+ res_dt.id +'" style="display: block">'+ res_dt.title +'</a>\
-							<span style="font-size: 11px; color: black">\
-							<img src="https://www.google.com/s2/favicons?domain='+ res_dt.host +'" width="16" height="16" style="margin-right: 5px">\
-							<font style="font-weight: 700">'+ res_dt.host +'</font> - '+ res_dt.published_at +'</span>\
-							<hr style="margin: 10px 0px">\
-							<p style="font-size: 13px">'+ res_dt.spoiler_content +'</p>\
-							<a onclick="ResultPage('+cat+','+res_dt.id+')" class="title-news title-news-"'+ res_dt.id +' style="float:right; font-size: 11px; cursor: pointer;">Lihat Selengkapnya</a>\
-						</div> \
-					</div>\
-          		')
-          	})
+					  <h5 style="margin: 40px 20px 10px">Hasil pencarian kata kunci "'+ word +'"</h5>\
+					  <hr style="margin-top: 13px">\
+				')
+	
+				var res_cat = data[1];
+				$.each(res_cat, function(index, res_cat){
+					console.log(res_cat)
+					$('.col-utama-mid').append('\
+						<h5 class="title-category" style="margin: 30px 20px 10px">\
+							<i class="material-icons" style="vertical-align: bottom">more_vert</i>\
+							'+capitalizeFirstLetter(res_cat)+'\
+						</h5>\
+						<div class="row-'+res_cat+'"></div>');
+				})
+	
+				var res_dt = data[0];
+				$.each(res_dt, function(index, res_dt){
+					  var cat = "'"+res_dt.category+"'"
+					  $('.row-'+ res_dt.category).append('\
+						  <div class="card card-headline" style="margin-bottom: 10px">\
+							<div class="card-body">\
+								<a onclick="ResultPage('+cat+','+res_dt.id+')" class="title-news title-news-'+ res_dt.id +'" style="display: block">'+ res_dt.title +'</a>\
+								<span style="font-size: 11px; color: black">\
+								<img src="https://www.google.com/s2/favicons?domain='+ res_dt.host +'" width="16" height="16" style="margin-right: 5px">\
+								<font style="font-weight: 700">'+ res_dt.host +'</font> - '+ res_dt.published_at +'</span>\
+								<hr style="margin: 10px 0px">\
+								<p style="font-size: 13px">'+ res_dt.spoiler_content +'</p>\
+								<a onclick="ResultPage('+cat+','+res_dt.id+')" class="title-news title-news-"'+ res_dt.id +' style="float:right; font-size: 11px; cursor: pointer;">Lihat Selengkapnya</a>\
+							</div> \
+						</div>\
+					  ')
+				  })
+			}else{
+				$('.bucket').html("")
+				$('.col-utama-mid').html('')
+				$('.col-utama-mid').append('\
+					  <h5 style="margin: 40px 20px 10px">Tidak ditemukan berita dengan kata kunci "'+ word +'"</h5>\
+					  <hr style="margin-top: 13px">\
+				')
+			}
 	    },
 	  	error: function(e){
       		alert('Failure');
