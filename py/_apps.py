@@ -73,8 +73,8 @@ class CRUD(object):
         db_name = 'entity_determiner'
         db_charset = 'utf8'
 
-        # today = datetime.today()
-        today = datetime.today() - timedelta(3)
+        today = datetime.today()
+        # today = datetime.today() - timedelta(3)
         today = today.strftime("%Y-%m-%d")
         start_today = today + " 00:00:00"
         end_today = today + " 23:59:59"
@@ -110,15 +110,15 @@ class CRUD(object):
         return json.dumps(sorted_cnt[:limit])
 
     @staticmethod
-    def category(cat,page):
+    def category(cat, page):
         db_host = '127.0.0.1'
         db_user = 'root'
         db_password = 'qwerty'
         db_name = 'entity_determiner'
         db_charset = 'utf8'
 
-        # today = datetime.today()
-        today = datetime.today() - timedelta(2)
+        today = datetime.today()
+        # today = datetime.today() - timedelta(2)
         today = today.strftime("%Y-%m-%d")
         start_today = today + " 00:00:00"
         end_today = today + " 23:59:59"
@@ -213,8 +213,8 @@ class CRUD(object):
 
         tables = ['indonesia', 'dunia', 'bisnis', 'teknologi', 'hiburan', 'olahraga', 'science', 'kesehatan']
 
-        # today = datetime.today()
-        today = datetime.today() - timedelta(2)
+        today = datetime.today()
+        # today = datetime.today() - timedelta(2)
         today = today.strftime("%Y-%m-%d")
         start_today = today + " 00:00:00"
         end_today = today + " 23:59:59"
@@ -313,15 +313,16 @@ class CRUD(object):
         db_charset = 'utf8'
         tables = ['indonesia', 'dunia', 'bisnis', 'teknologi', 'hiburan', 'olahraga', 'science', 'kesehatan']
 
-        # today = datetime.today()
-        today = datetime.today() - timedelta(2)
+        today = datetime.today()
+        # today = datetime.today() - timedelta(2)
         today = today.strftime("%Y-%m-%d")
         start_today = today + " 00:00:00"
         end_today = today + " 23:59:59"
 
         all_result = []
         for t in tables:
-            query = """SELECT entity FROM {table_name} WHERE published_at BETWEEN '{start_today}' AND '{end_today}' ORDER BY published_at DESC""".format(table_name=t, start_today=start_today, end_today=end_today)
+            query = """SELECT entity_label FROM {table_name} WHERE published_at BETWEEN '{start_today}' AND '{end_today}' ORDER BY published_at DESC""".format(
+                table_name=t, start_today=start_today, end_today=end_today)
 
             connect = mdb.connect(db_host, db_user, db_password, db_name, charset=db_charset)
             cursor = connect.cursor()
@@ -330,19 +331,28 @@ class CRUD(object):
             connect.close()
 
             entity = []
-            for r in result:
-                entity.append(r[0].split('*'))
+            for res in result:
+                for r in res[0].split('*'):
+                    try:
+                        if r.split('#')[1] == "PERSON":
+                            entity.append(r.split('#')[0])
+                    except:
+                        pass
 
-            all_entity = []
-            for ent in entity:
-                for e in ent:
-                    if len(e) > 2:
-                        all_entity.append(e)
+            cnt = Counter()
+            for e in entity:
+                cnt[e] += 1
+
+            sorted_cnt = sorted(cnt.items(), key=operator.itemgetter(1), reverse=True)
+
+            final_ent = []
+            for sc in sorted_cnt:
+                final_ent.append(sc[0])
 
             jsond = {
                 'category': t,
                 'count': len(result),
-                'entitas': all_entity[:5]
+                'entitas': final_ent[:5]
             }
             all_result.append(jsond)
 

@@ -535,11 +535,11 @@ function EntitySearch(word){
 	    dataType: 'json',
 	    data: JSON.stringify({'word': word}),
 	    success: function(data){
-			if(data != null && data != ""){
+			if(data[0].length != 0){
 				$('.bucket').html("")
 				$('.col-utama-mid').html('')
 				$('.col-utama-mid').append('\
-					  <h5 style="margin: 40px 20px 10px">Hasil pencarian kata kunci "'+ word +'"</h5>\
+					  <h5 style="margin: 20px 20px 10px">Hasil pencarian kata kunci "'+ word +'"</h5>\
 					  <hr style="margin-top: 13px">\
 				')
 	
@@ -575,7 +575,7 @@ function EntitySearch(word){
 				$('.bucket').html("")
 				$('.col-utama-mid').html('')
 				$('.col-utama-mid').append('\
-					  <h5 style="margin: 40px 20px 10px">Tidak ditemukan berita dengan kata kunci "'+ word +'"</h5>\
+					  <h5 style="margin: 20px 20px 10px">Tidak ditemukan berita dengan kata kunci "'+ word +'"</h5>\
 					  <hr style="margin-top: 13px">\
 				')
 			}
