@@ -13,7 +13,7 @@
 </head>
 <body>
 	<!-- HEADER -->
-	<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" style="">
+	<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
 		<i class="material-icons btn-switch-menu" style="margin-right: 20px; cursor: pointer;" onclick="switchMenu()">dehaze</i>
 		<a class="navbar-brand" href="/">
 		    <font style="font-weight: 600; color: #50af55">Entity</font> Determiner
@@ -24,7 +24,7 @@
 	  	</button>
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<form class="form-inline ml-auto">
+			<form class="form-inline ml-auto" onsubmit="SubmitEntitySearch('.index-search');return false;">
 				<div class="header-search">
 		     		<input class="form-control mr-sm-2 index-search" placeholder="Search">
 		     		<i class="material-icons btn-search" style="vertical-align: middle; margin-right: 7px; color: #999">search</i>
