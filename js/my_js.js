@@ -521,6 +521,12 @@ function About(){
 	')
 }
 
+function SubmitEntitySearch(form){
+	var word = $(form).val();
+	console.log(word);
+	EntitySearch(word);
+}
+
 function EntitySearch(word){
 	$.ajax({
     	url: "/entity_search",
