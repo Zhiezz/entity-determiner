@@ -112,7 +112,7 @@ function EntitiPopuler(limit){
 
 function Statistik(){
     $('.left-menu').removeClass('active')
-    $(this).addClass('active')
+    $('.left-menu-statistik').addClass('active')
     $.ajax({
     	url: "/statistik",
 	    type: "post",

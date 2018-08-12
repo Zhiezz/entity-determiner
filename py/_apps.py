@@ -74,7 +74,7 @@ class CRUD(object):
         db_charset = 'utf8'
 
         today = datetime.today()
-        # today = datetime.today() - timedelta(3)
+        # today = datetime.today() - timedelta(1)
         today = today.strftime("%Y-%m-%d")
         start_today = today + " 00:00:00"
         end_today = today + " 23:59:59"
@@ -118,7 +118,7 @@ class CRUD(object):
         db_charset = 'utf8'
 
         today = datetime.today()
-        # today = datetime.today() - timedelta(2)
+        # today = datetime.today() - timedelta(1)
         today = today.strftime("%Y-%m-%d")
         start_today = today + " 00:00:00"
         end_today = today + " 23:59:59"
@@ -214,7 +214,7 @@ class CRUD(object):
         tables = ['indonesia', 'dunia', 'bisnis', 'teknologi', 'hiburan', 'olahraga', 'science', 'kesehatan']
 
         today = datetime.today()
-        # today = datetime.today() - timedelta(2)
+        # today = datetime.today() - timedelta(1)
         today = today.strftime("%Y-%m-%d")
         start_today = today + " 00:00:00"
         end_today = today + " 23:59:59"
@@ -314,7 +314,7 @@ class CRUD(object):
         tables = ['indonesia', 'dunia', 'bisnis', 'teknologi', 'hiburan', 'olahraga', 'science', 'kesehatan']
 
         today = datetime.today()
-        # today = datetime.today() - timedelta(2)
+        # today = datetime.today() - timedelta(1)
         today = today.strftime("%Y-%m-%d")
         start_today = today + " 00:00:00"
         end_today = today + " 23:59:59"
