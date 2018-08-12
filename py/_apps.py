@@ -59,7 +59,8 @@ class CRUD(object):
                     'entity_label': r[6],
                     'url': r[7],
                     'host': r[8],
-                    'published_at': CRUD.mod_tgl_indo(r[9].strftime('%w, %d, %m, %Y, %H:%M:%S'))
+                    'published_at': CRUD.mod_tgl_indo(r[9].strftime('%w, %d, %m, %Y, %H:%M:%S')),
+                    'img_url': r[10]
                 }
                 all_result.append(json_result)
 
@@ -197,7 +198,8 @@ class CRUD(object):
                 'entity_label': _el,
                 'url': r[7],
                 'host': r[8],
-                'published_at': CRUD.mod_tgl_indo(r[9].strftime('%w, %d, %m, %Y, %H:%M:%S'))
+                'published_at': CRUD.mod_tgl_indo(r[9].strftime('%w, %d, %m, %Y, %H:%M:%S')),
+                'img_url': r[10]
             }
             all_result.append(json_result)
 
@@ -242,7 +244,8 @@ class CRUD(object):
                     'entity_label': r[6],
                     'url': r[7],
                     'host': r[8],
-                    'published_at': CRUD.mod_tgl_indo(r[9].strftime('%w, %d, %m, %Y, %H:%M:%S'))
+                    'published_at': CRUD.mod_tgl_indo(r[9].strftime('%w, %d, %m, %Y, %H:%M:%S')),
+                    'img_url': r[10]
                 }
                 all_result.append(json_result)
 
@@ -295,7 +298,8 @@ class CRUD(object):
                     'entity_label': r[6],
                     'url': r[7],
                     'host': r[8],
-                    'published_at': CRUD.mod_tgl_indo(r[9].strftime('%w, %d, %m, %Y, %H:%M:%S'))
+                    'published_at': CRUD.mod_tgl_indo(r[9].strftime('%w, %d, %m, %Y, %H:%M:%S')),
+                    'img_url': r[10]
                 }
                 all_result.append(json_result)
 

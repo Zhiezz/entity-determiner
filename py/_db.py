@@ -21,8 +21,8 @@ class Database(object):
             for i in tqdm(range(len(news))):
                 d = news[i]
                 try:
-                    title, url, host, published_at, img_url = d
-                    clean_content, spoiler_content = gc.get_content(url)
+                    title, url, host, published_at = d
+                    clean_content, spoiler_content, img_url = gc.get_content(url)
                     tagged_content, entity, entity_label = gn.edit_tagged_content(clean_content)
                     tagged_content = '\n'.join(tagged_content)
 

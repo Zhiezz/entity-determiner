@@ -19,17 +19,13 @@ class GetURL(object):
             lpc = link_per_cluster[i]
             f_link = feedparser.parse(lpc)
             for fl in f_link['items']:
-                try:
-                    img_url = fl['summary'].split('src="')[1].split('"')[0]
-                except:
-                    img_url = ''
                 title = fl['title']
                 link = fl['links'][0]['href']
                 host = link.split('//')[1].split('/')[0]
                 publish_date = datetime.strptime(fl['published'], "%a, %d %b %Y %H:%M:%S GMT").strftime(
                     "%Y-%m-%d %H:%M:%S")
 
-                link_per_cluster_all.append((title, link, host, publish_date, img_url))
+                link_per_cluster_all.append((title, link, host, publish_date))
 
         return link_per_cluster_all
 

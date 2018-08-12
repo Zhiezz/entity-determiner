@@ -50,7 +50,7 @@ class GetContent(object):
         g = Goose({
             'use_meta_language': False,
             'target_language': 'id',
-            'enable_image_fetching': False,
+            'enable_image_fetching': True,
         })
         extract = g.extract(url=link)
 
@@ -65,8 +65,10 @@ class GetContent(object):
         content = content.strip('.').strip() + '.'
         content = GetContent.remove_baca(content)
         spoiler = content[:150] + '...'
+        image = extract.top_image
+        image_src = image.src
 
         if len(content) <= 500:
             return "Not Valid"
         else:
-            return content, spoiler
+            return content, spoiler, image_src
