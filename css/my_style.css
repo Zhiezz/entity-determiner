@@ -239,6 +239,21 @@
 	font-size: 15px;
 	user-select: none;
 }
+.detail-thumbnail{
+  border-radius: 2%;
+  display: block;
+  margin: 30px auto;
+  width:90%;
+  position:relative;
+  background:url() 50% 50% no-repeat;
+  background-size:cover;
+  background-clip:content-box;
+}
+.detail-thumbnail:before{
+    display:block;
+    content:"";
+    padding-top:75%;
+}
 
 /*mark { 
    	background-color: #fff;

@@ -20,6 +20,7 @@ function FirstLoad(){
       contentType: 'HTML',
       dataType: 'json',
       success: function(data){
+      	console.log(data)
       	$('.bucket').append("\
       		<h5 class='title-category' style='margin: 20px 10px 10px'>Terbaru</h5>\
 			<div class='row-indonesia'></div>\
@@ -65,13 +66,18 @@ function FirstLoad(){
       		$('.row-'+ data.category).append('\
       			<div class="card card-headline" style="margin-bottom: 10px">\
 					<div class="card-body">\
-						<a onclick="ResultPage('+cat+','+data.id+')" class="title-news title-news-'+ data.id +'" style="display: block;">'+ data.title +'</a>\
-						<span style="font-size: 11px; color: black">\
-						<img src="https://www.google.com/s2/favicons?domain='+ data.host +'" width="16" height="16" style="margin-right: 5px">\
-						<font style="font-weight: 700">'+ data.host +'</font> - '+ data.published_at +'</span>\
-						<hr style="margin: 10px 0px">\
-						<p style="font-size: 13px">'+ data.spoiler_content +'</p>\
-						<a onclick="ResultPage('+cat+','+data.id+')" class="title-news title-news-"'+ data.id +' style="float:right; font-size: 11px; cursor: pointer;">Lihat Selengkapnya</a>\
+						<div style="width: 23%;height: auto;float: left;">\
+							<img src="'+ data.img_url +'" style="width: 150px;height: 120px;border-radius: 8px;max-width: 200px;object-fit: cover;max-height: 200px;"/>\
+						</div>\
+						<div style="width: 77%;float: right;">\
+							<a onclick="ResultPage('+cat+','+data.id+')" class="title-news title-news-'+ data.id +'" style="display: block;">'+ data.title +'</a>\
+							<span style="font-size: 11px; color: black">\
+							<img src="https://www.google.com/s2/favicons?domain='+ data.host +'" width="16" height="16" style="margin-right: 5px">\
+							<font style="font-weight: 700">'+ data.host +'</font> - '+ data.published_at +'</span>\
+							<hr style="margin: 10px 0px">\
+							<p style="font-size: 13px">'+ data.spoiler_content +'</p>\
+							<a onclick="ResultPage('+cat+','+data.id+')" class="title-news title-news-"'+ data.id +' style="float:right; font-size: 11px; cursor: pointer;">Lihat Selengkapnya</a>\
+						</div>\
 					</div> \
 				</div>\
       		')
@@ -213,6 +219,7 @@ function Category(category, logo, page){
       dataType: 'json',
       data: JSON.stringify({'category': category, 'page': page}),
       success: function(data){
+      	console.log(data)
       	if(page > 0){
       		if(data.length == 10){
 	      		$('.btn-load-more').hide()
@@ -221,13 +228,19 @@ function Category(category, logo, page){
 	          		$('.row-'+ category).append('\
 	          			<div class="card card-headline" style="margin-bottom: 10px">\
 							<div class="card-body">\
-								<a onclick="ResultPage('+cat+','+data.id+')" class="title-news title-news-'+ data.id +'" style="display: block">'+ data.title +'</a>\
-								<span style="font-size: 11px; color: black">\
-								<img src="https://www.google.com/s2/favicons?domain='+ data.host +'" width="16" height="16" style="margin-right: 5px">\
-								<font style="font-weight: 700">'+ data.host +'</font> - '+ data.published_at +'</span>\
-								<hr style="margin: 10px 0px">\
-								<p style="font-size: 13px">'+ data.spoiler_content +'</p>\
-								<a onclick="ResultPage('+cat+','+data.id+')" class="title-news title-news-"'+ data.id +' style="float:right; font-size: 11px; cursor: pointer;">Lihat Selengkapnya</a>\
+								<div class="card-body">\
+									<div style="width: 23%;height: auto;float: left;">\
+									<img src="'+ data.img_url +'" style="width: 150px;height: 120px;border-radius: 8px;max-width: 200px;object-fit: cover;max-height: 200px;"/>\
+								</div>\
+								<div style="width: 77%;float: right;">\
+									<a onclick="ResultPage('+cat+','+data.id+')" class="title-news title-news-'+ data.id +'" style="display: block">'+ data.title +'</a>\
+									<span style="font-size: 11px; color: black">\
+									<img src="https://www.google.com/s2/favicons?domain='+ data.host +'" width="16" height="16" style="margin-right: 5px">\
+									<font style="font-weight: 700">'+ data.host +'</font> - '+ data.published_at +'</span>\
+									<hr style="margin: 10px 0px">\
+									<p style="font-size: 13px">'+ data.spoiler_content +'</p>\
+									<a onclick="ResultPage('+cat+','+data.id+')" class="title-news title-news-"'+ data.id +' style="float:right; font-size: 11px; cursor: pointer;">Lihat Selengkapnya</a>\
+								</div> \
 							</div> \
 						</div>\
 	          		')
@@ -244,13 +257,19 @@ function Category(category, logo, page){
 	          		$('.row-'+ category).append('\
 	          			<div class="card card-headline" style="margin-bottom: 10px">\
 							<div class="card-body">\
-								<a onclick="ResultPage('+cat+','+data.id+')" class="title-news title-news-'+ data.id +'" style="display: block">'+ data.title +'</a>\
-								<span style="font-size: 11px; color: black">\
-								<img src="https://www.google.com/s2/favicons?domain='+ data.host +'" width="16" height="16" style="margin-right: 5px">\
-								<font style="font-weight: 700">'+ data.host +'</font> - '+ data.published_at +'</span>\
-								<hr style="margin: 10px 0px">\
-								<p style="font-size: 13px">'+ data.spoiler_content +'</p>\
-								<a onclick="ResultPage('+cat+','+data.id+')" class="title-news title-news-"'+ data.id +' style="float:right; font-size: 11px; cursor: pointer;">Lihat Selengkapnya</a>\
+								<div class="card-body">\
+									<div style="width: 23%;height: auto;float: left;">\
+									<img src="'+ data.img_url +'" style="width: 150px;height: 120px;border-radius: 8px;max-width: 200px;object-fit: cover;max-height: 200px;"/>\
+								</div>\
+								<div style="width: 77%;float: right;">\
+									<a onclick="ResultPage('+cat+','+data.id+')" class="title-news title-news-'+ data.id +'" style="display: block">'+ data.title +'</a>\
+									<span style="font-size: 11px; color: black">\
+									<img src="https://www.google.com/s2/favicons?domain='+ data.host +'" width="16" height="16" style="margin-right: 5px">\
+									<font style="font-weight: 700">'+ data.host +'</font> - '+ data.published_at +'</span>\
+									<hr style="margin: 10px 0px">\
+									<p style="font-size: 13px">'+ data.spoiler_content +'</p>\
+									<a onclick="ResultPage('+cat+','+data.id+')" class="title-news title-news-"'+ data.id +' style="float:right; font-size: 11px; cursor: pointer;">Lihat Selengkapnya</a>\
+								</div> \
 							</div> \
 						</div>\
 	          		')
@@ -271,13 +290,19 @@ function Category(category, logo, page){
 	          		$('.row-'+ category).append('\
 	          			<div class="card card-headline" style="margin-bottom: 10px">\
 							<div class="card-body">\
-								<a onclick="ResultPage('+cat+','+data.id+')" class="title-news title-news-'+ data.id +'" style="display: block">'+ data.title +'</a>\
-								<span style="font-size: 11px; color: black">\
-								<img src="https://www.google.com/s2/favicons?domain='+ data.host +'" width="16" height="16" style="margin-right: 5px">\
-								<font style="font-weight: 700">'+ data.host +'</font> - '+ data.published_at +'</span>\
-								<hr style="margin: 10px 0px">\
-								<p style="font-size: 13px">'+ data.spoiler_content +'</p>\
-								<a onclick="ResultPage('+cat+','+data.id+')" class="title-news title-news-"'+ data.id +' style="float:right; font-size: 11px; cursor: pointer;">Lihat Selengkapnya</a>\
+								<div class="card-body">\
+									<div style="width: 23%;height: auto;float: left;">\
+									<img src="'+ data.img_url +'" style="width: 150px;height: 120px;border-radius: 8px;max-width: 200px;object-fit: cover;max-height: 200px;"/>\
+								</div>\
+								<div style="width: 77%;float: right;">\
+									<a onclick="ResultPage('+cat+','+data.id+')" class="title-news title-news-'+ data.id +'" style="display: block">'+ data.title +'</a>\
+									<span style="font-size: 11px; color: black">\
+									<img src="https://www.google.com/s2/favicons?domain='+ data.host +'" width="16" height="16" style="margin-right: 5px">\
+									<font style="font-weight: 700">'+ data.host +'</font> - '+ data.published_at +'</span>\
+									<hr style="margin: 10px 0px">\
+									<p style="font-size: 13px">'+ data.spoiler_content +'</p>\
+									<a onclick="ResultPage('+cat+','+data.id+')" class="title-news title-news-"'+ data.id +' style="float:right; font-size: 11px; cursor: pointer;">Lihat Selengkapnya</a>\
+								</div> \
 							</div> \
 						</div>\
 	          		')
@@ -326,6 +351,7 @@ function ResultPage(table, idx){
       success: function(data){
       	switchMenu();
       	data = data[0]
+      	console.log(data)
       	var cat = "'" + table + "'"
       	$('.col-utama-mid').append('\
       		<button class="btn-back-result" onclick="location.reload();">\
@@ -343,6 +369,8 @@ function ResultPage(table, idx){
 					</span>\
 					\
 					<hr style="margin: 10px 0px; border-bottom: 2px solid #eaeaea">\
+					<div class="detail-thumbnail" style="background-image:url('+ data.img_url +')">\
+					</div>\
 					\
 					'+data.tagged_content+'\
 					\
@@ -560,6 +588,10 @@ function EntitySearch(word){
 					  $('.row-'+ res_dt.category).append('\
 						  <div class="card card-headline" style="margin-bottom: 10px">\
 							<div class="card-body">\
+								<div style="width: 23%;height: auto;float: left;">\
+								<img src="'+ res_dt.img_url +'" style="width: 150px;height: 120px;border-radius: 8px;max-width: 200px;object-fit: cover;max-height: 200px;"/>\
+							</div>\
+							<div style="width: 77%;float: right;">\
 								<a onclick="ResultPage('+cat+','+res_dt.id+')" class="title-news title-news-'+ res_dt.id +'" style="display: block">'+ res_dt.title +'</a>\
 								<span style="font-size: 11px; color: black">\
 								<img src="https://www.google.com/s2/favicons?domain='+ res_dt.host +'" width="16" height="16" style="margin-right: 5px">\
@@ -567,6 +599,7 @@ function EntitySearch(word){
 								<hr style="margin: 10px 0px">\
 								<p style="font-size: 13px">'+ res_dt.spoiler_content +'</p>\
 								<a onclick="ResultPage('+cat+','+res_dt.id+')" class="title-news title-news-"'+ res_dt.id +' style="float:right; font-size: 11px; cursor: pointer;">Lihat Selengkapnya</a>\
+							</div> \
 							</div> \
 						</div>\
 					  ')

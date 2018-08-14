@@ -65,8 +65,11 @@ class GetContent(object):
         content = content.strip('.').strip() + '.'
         content = GetContent.remove_baca(content)
         spoiler = content[:150] + '...'
-        image = extract.top_image
-        image_src = image.src
+        try:
+            image = extract.top_image
+            image_src = image.src
+        except:
+            image_src = ''
 
         if len(content) <= 500:
             return "Not Valid"
